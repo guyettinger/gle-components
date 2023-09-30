@@ -1,6 +1,6 @@
 import { createContext, Dispatch, useContext } from "react";
 import { useImmerReducer } from "use-immer";
-import { set } from "lodash";
+import { get, omit, set } from "lodash";
 import { JsonValue, JsonViewProviderProps } from "./JsonView.types";
 
 enum JsonViewReducerActionTypes {
@@ -50,13 +50,20 @@ type JsonViewReducerAction =
 const jsonViewReducer = (json:any, action: JsonViewReducerAction): void => {
     switch (action.type) {
         case JsonViewReducerActionTypes.add:
-            // todo
+            set(json, action.path, action.value)
             break
         case JsonViewReducerActionTypes.remove:
-            // todo
+            omit(json, action.path)
             break
         case JsonViewReducerActionTypes.rename:
-            // todo
+            const value = get(json, action.path)
+            const separator = '.'
+            const pathArray = action.path.split(separator)
+            const parentPathArray = pathArray.slice(0,pathArray.length - 2)
+            const newPathArray = [...parentPathArray, action.name]
+            const newPath = newPathArray.join(separator)
+            omit(json, action.path)
+            set(json, newPath, value)
             break
         case JsonViewReducerActionTypes.update:
             set(json, action.path, action.value)
