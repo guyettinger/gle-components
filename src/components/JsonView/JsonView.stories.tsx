@@ -15,7 +15,6 @@ export const Primary: Story = (args:JsonViewProps) => (
     <JsonView data-testId="JsonView-id" {...args} />
 );
 Primary.args = {
-    title: 'json',
     json: {
         firstName: "Teeny",
         lastName: "Bettini",

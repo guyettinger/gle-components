@@ -8,7 +8,7 @@ const StyledUl = styled.ul`
 `
 
 const JsonTreeView = ({title}: JsonTreeViewProps) => {
-    const path: string[] = [title]
+    const path: string = ""
     const json: JsonValue = useJsonViewContext()
     return (
         <StyledUl>

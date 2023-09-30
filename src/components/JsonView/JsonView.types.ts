@@ -58,12 +58,12 @@ export interface JsonBooleanViewProps {
 
 export interface JsonObjectViewProps {
     value: JsonObject,
-    path: Array<string>
+    path: string
 }
 
 export interface JsonArrayViewProps {
     value: JsonArray,
-    path: Array<string>
+    path: string
 }
 
 export interface JsonNullViewProps {
@@ -74,8 +74,8 @@ export interface JsonUnknownViewProps {
 }
 
 export interface JsonNodeViewProps {
-    title: string
-    path: Array<string>
+    title?: string
+    path: string
     value: JsonValue
 }
 
@@ -84,13 +84,12 @@ export interface JsonNodeTitleViewProps {
 }
 
 export interface JsonNodeValueViewProps {
-    title: string
-    path: Array<string>
+    path: string
     value: JsonValue
 }
 
 export interface JsonTreeViewProps {
-    title: string
+    title?: string
 }
 
 export interface JsonViewProps {

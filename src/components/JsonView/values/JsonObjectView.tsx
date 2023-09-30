@@ -13,7 +13,10 @@ const JsonObjectView = ({path, value}: JsonObjectViewProps) => {
             <StyledUl>
                 {
                     Object.entries(value).map(([k, v]: [string, JsonValue]) => {
-                        return <JsonNodeView key={k} title={k} path={[...path, k]} value={v}></JsonNodeView>
+                        return <JsonNodeView key={k}
+                                             title={k}
+                                             path={path ? `${path}.${k}` : `${k}`}
+                                             value={v}/>
                     })
                 }
             </StyledUl>

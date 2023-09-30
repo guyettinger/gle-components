@@ -13,8 +13,8 @@ const JsonArrayView = ({path, value}: JsonArrayViewProps) => {
                 {
                     value.map((arrayValue: JsonValue, arrayIndex: number) => {
                         return <JsonNodeView key={arrayIndex}
-                                             title={arrayIndex.toString()}
-                                             path={[...path, arrayIndex.toString()]}
+                                             title={`${arrayIndex}`}
+                                             path={path ? `${path}[${arrayIndex}]` : `[${arrayIndex}]`}
                                              value={arrayValue}/>
                     })
                 }
