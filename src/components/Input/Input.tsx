@@ -1,4 +1,4 @@
-import { forwardRef, Fragment, Ref } from "react";
+import { forwardRef, Fragment } from "react";
 import styled from "styled-components";
 import { InputProps } from "./Input.types";
 

@@ -13,11 +13,11 @@ const Editable = ({value, placeholder, editableType, onValueChanged}: EditablePr
         }
     }, [isEditing, inputRef]);
 
-    const handleClick = (e: any) => {
+    const handleClick = () => {
         setIsEditing(true)
     }
 
-    const handleBlur = (e: any) => {
+    const handleBlur = () => {
         setIsEditing(false)
     }
 
