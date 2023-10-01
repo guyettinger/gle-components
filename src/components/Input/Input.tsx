@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { forwardRef, Fragment, Ref } from "react";
 import styled from "styled-components";
 import { InputProps } from "./Input.types";
 
@@ -40,7 +40,7 @@ const StyledText = styled.p<InputProps>`
 `
 
 const Input =
-    ({
+    forwardRef<HTMLInputElement, InputProps>(({
          id,
          disabled,
          label,
@@ -50,7 +50,7 @@ const Input =
          onChange,
          placeholder,
          ...props
-     }: InputProps) => {
+     }: InputProps, ref) => {
         return (
             <Fragment>
                 <StyledLabel>
@@ -60,6 +60,7 @@ const Input =
                 </StyledLabel>
                 <StyledInput
                     id={id}
+                    ref={ref}
                     type="text"
                     onChange={onChange}
                     disabled={disabled}
@@ -72,6 +73,6 @@ const Input =
                 </StyledMessage>
             </Fragment>
         )
-    }
+    })
 
 export default Input
