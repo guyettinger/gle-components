@@ -16,11 +16,7 @@ export const Primary: Story = (args:any) => {
     const [{value},updateArgs] = useArgs()
 
     const onValueChange = (newValue: string) => {
-        // Call the provided callback
-        // This is used for the Actions tab
         args.onValueChange?.(newValue);
-
-        // Update the arg in Storybook
         updateArgs({ value: newValue });
     };
 
@@ -29,7 +25,7 @@ export const Primary: Story = (args:any) => {
     )
 }
 Primary.args = {
-    value: 'Editable text',
     editableType: EditableTypes.input,
+    value: 'Editable text',
     onValueChanged: value => {console.log('onValueChanged', value)}
 };
