@@ -7,8 +7,7 @@ enum JsonViewReducerActionTypes {
     add = 'add',
     remove = 'remove',
     rename = 'rename',
-    update = 'update',
-    log = 'log'
+    update = 'update'
 }
 
 type JsonViewAddAction = {
@@ -45,7 +44,6 @@ type JsonViewReducerAction =
     | JsonViewRemoveAction
     | JsonViewRenameAction
     | JsonViewUpdateAction
-    | JsonViewLogAction
 
 const jsonViewReducer = (json:any, action: JsonViewReducerAction): void => {
     switch (action.type) {
@@ -67,9 +65,6 @@ const jsonViewReducer = (json:any, action: JsonViewReducerAction): void => {
             break
         case JsonViewReducerActionTypes.update:
             set(json, action.path, action.value)
-            break
-        case JsonViewReducerActionTypes.log:
-            console.log(action.type, action.path, action.value)
             break
     }
 }
