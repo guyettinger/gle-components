@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { JsonNodeViewProps } from "./JsonView.types";
-import JsonNodeTitleView from "./JsonNodeTitleView";
-import JsonNodeValueView from "./JsonNodeValueView"
+import JsonNodeTitleView from "./JsonNodeTitle";
+import JsonNodeValue from "./JsonNodeValue"
 import { useJsonViewApiContext } from "./JsonViewContext";
 
 const JsonNodeContent = styled.li`
@@ -17,7 +17,7 @@ const JsonNodeValueContainer = styled.div`
     flex: 1;
 `
 
-const JsonNodeView = ({title, path, value}: JsonNodeViewProps) => {
+const JsonNode = ({title, path, value}: JsonNodeViewProps) => {
     const api = useJsonViewApiContext()
 
     const handleClick = (e: any) => {
@@ -29,13 +29,13 @@ const JsonNodeView = ({title, path, value}: JsonNodeViewProps) => {
         <JsonNodeContent onClick={handleClick}>
             {title &&
                 <JsonNodeTitleContainer>
-                    <JsonNodeTitleView title={title}/>
+                    <JsonNodeTitleView title={title} path={path}/>
                 </JsonNodeTitleContainer>
             }
             <JsonNodeValueContainer>
-                <JsonNodeValueView path={path} value={value}/>
+                <JsonNodeValue value={value} path={path}/>
             </JsonNodeValueContainer>
         </JsonNodeContent>
     )
 }
-export default JsonNodeView;
+export default JsonNode;

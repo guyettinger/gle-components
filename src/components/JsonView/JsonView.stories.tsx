@@ -24,6 +24,8 @@ Primary.args = {
             good: "Muffin Face",
             bad: "Boop Face",
             evil: "The Darkness"
-        }
+        },
+        isGood: true,
+        tag: null
     }
 };

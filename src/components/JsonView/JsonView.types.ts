@@ -46,14 +46,17 @@ export function isJsonNull(value: JsonValue): value is JsonNull {
 
 export interface JsonStringViewProps {
     value: JsonString
+    path: string
 }
 
 export interface JsonNumberViewProps {
     value: JsonNumber
+    path: string
 }
 
 export interface JsonBooleanViewProps {
     value: JsonBoolean
+    path: string
 }
 
 export interface JsonObjectViewProps {
@@ -67,10 +70,11 @@ export interface JsonArrayViewProps {
 }
 
 export interface JsonNullViewProps {
+    path: string
 }
 
 export interface JsonUnknownViewProps {
-
+    path: string
 }
 
 export interface JsonNodeViewProps {
@@ -81,6 +85,7 @@ export interface JsonNodeViewProps {
 
 export interface JsonNodeTitleViewProps {
     title: string
+    path: string
 }
 
 export interface JsonNodeValueViewProps {

@@ -1,7 +1,7 @@
 import { JsonNullViewProps } from "../JsonView.types";
 
-const JsonNullView = ({}: JsonNullViewProps) => {
+const JsonNullNode = ({path}: JsonNullViewProps) => {
     return (<span>null</span>)
 }
 
-export default JsonNullView;
+export default JsonNullNode;

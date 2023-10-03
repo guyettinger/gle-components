@@ -1,11 +1,11 @@
 import { JsonViewProps } from "./JsonView.types";
 import { JsonViewProvider } from "./JsonViewContext";
-import JsonTreeView from "./JsonTreeView";
+import JsonTree from "./JsonTree";
 
 const JsonView = ({title, json}: JsonViewProps) => {
     return (
         <JsonViewProvider json={json}>
-            <JsonTreeView title={title}/>
+            <JsonTree title={title}/>
         </JsonViewProvider>
     )
 }
