@@ -41,6 +41,7 @@ type JsonViewReducerAction =
 
 const jsonViewReducer = (json: any, action: JsonViewReducerAction): void => {
     const separator = '.'
+    console.log('state before', JSON.stringify(action), JSON.stringify(json, null, 2))
     switch (action.type) {
         case JsonViewReducerActionTypes.add: {
             set(json, action.path, action.value)
@@ -54,7 +55,6 @@ const jsonViewReducer = (json: any, action: JsonViewReducerAction): void => {
                 const arrayPath = action.path.slice(0, action.path.lastIndexOf(arrayIndexPart))
                 const array = get(json, arrayPath)
                 array.splice(arrayIndex, 1)
-                set(json, arrayPath, [...array])
             } else {
                 unset(json, action.path)
             }
@@ -75,6 +75,7 @@ const jsonViewReducer = (json: any, action: JsonViewReducerAction): void => {
             break
         }
     }
+    console.log('state after', JSON.stringify(action), JSON.stringify(json, null, 2))
 }
 
 const JsonViewContext = createContext<JsonValue | null>(null)
