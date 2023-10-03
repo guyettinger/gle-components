@@ -6,6 +6,7 @@ import JsonNode from "./JsonNode";
 const StyledUl = styled.ul`
   list-style-type: none;
   padding-left: 0;
+  padding-right:0;
 `
 
 const JsonTree = ({title}: JsonTreeViewProps) => {

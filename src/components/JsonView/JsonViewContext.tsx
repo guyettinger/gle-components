@@ -1,6 +1,6 @@
 import { createContext, Dispatch, useContext } from "react";
 import { useImmerReducer } from "use-immer";
-import { get, omit, set } from "lodash";
+import { get, set, unset } from "lodash";
 import { JsonValue, JsonViewProviderProps } from "./JsonView.types";
 
 enum JsonViewReducerActionTypes {
@@ -33,12 +33,6 @@ type JsonViewUpdateAction = {
     value: JsonValue
 }
 
-type JsonViewLogAction = {
-    type: JsonViewReducerActionTypes.log
-    path: string
-    value: JsonValue
-}
-
 type JsonViewReducerAction =
     | JsonViewAddAction
     | JsonViewRemoveAction
@@ -51,7 +45,7 @@ const jsonViewReducer = (json:any, action: JsonViewReducerAction): void => {
             set(json, action.path, action.value)
             break
         case JsonViewReducerActionTypes.remove:
-            omit(json, action.path)
+            unset(json, action.path)
             break
         case JsonViewReducerActionTypes.rename:
             const value = get(json, action.path)
@@ -60,7 +54,7 @@ const jsonViewReducer = (json:any, action: JsonViewReducerAction): void => {
             const parentPathArray = pathArray.slice(0,pathArray.length - 2)
             const newPathArray = [...parentPathArray, action.name]
             const newPath = newPathArray.join(separator)
-            omit(json, action.path)
+            unset(json, action.path)
             set(json, newPath, value)
             break
         case JsonViewReducerActionTypes.update:
@@ -76,7 +70,6 @@ interface JsonViewApi {
     remove: (path: string) => void
     rename: (path: string, name: string) => void
     update: (path: string, value: JsonValue) => void
-    log: (path: string, value: JsonValue) => void
 }
 
 const createJsonViewApi = (dispatch: Dispatch<JsonViewReducerAction>): JsonViewApi => {
@@ -116,21 +109,11 @@ const createJsonViewApi = (dispatch: Dispatch<JsonViewReducerAction>): JsonViewA
         return dispatch(updateAction)
     }
 
-    const log = (path: string, value: JsonValue) => {
-        const logAction: JsonViewLogAction = {
-            type: JsonViewReducerActionTypes.log,
-            path: path,
-            value: value
-        }
-        return dispatch(logAction)
-    }
-
     return {
         add,
         remove,
         rename,
-        update,
-        log
+        update
     }
 
 }
@@ -143,8 +126,6 @@ const JsonViewApiContext = createContext<JsonViewApi>({
     rename(path: string, name: string): void {
     },
     update(path, value): void {
-    },
-    log(path: string, value: JsonValue): void {
     }
 });
 

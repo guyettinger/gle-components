@@ -4,12 +4,14 @@ import styled from "styled-components";
 
 const StyledUl = styled.ul`
   list-style-type: none;
-  padding-left: 0;
+  padding-left: 20px;
+  padding-right:0;
 `
 
 const JsonObjectNode = ({value, path}: JsonObjectViewProps) => {
     return (
         <span>
+            {'{'}
             <StyledUl>
                 {
                     Object.entries(value).map(([k, v]: [string, JsonValue]) => {
@@ -20,6 +22,7 @@ const JsonObjectNode = ({value, path}: JsonObjectViewProps) => {
                     })
                 }
             </StyledUl>
+            {'}'}
         </span>
 
     )
