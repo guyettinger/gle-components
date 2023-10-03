@@ -1,7 +1,11 @@
 import { JsonBooleanViewProps } from "../JsonView.types";
+import BooleanRepresentation from "../../Representation/BooleanRepresentation/BooleanRepresentation";
 
 const JsonBooleanView = ({value}: JsonBooleanViewProps) => {
-    return (<span>{value ? "true" : "false"}</span>)
+    const handleSubmit = (newValue:boolean) =>{
+
+    }
+    return (<BooleanRepresentation value={value} onSubmit={handleSubmit}/>)
 }
 
 export default JsonBooleanView;

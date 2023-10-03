@@ -3,7 +3,7 @@ import Input from "./Input";
 
 const meta: Meta<typeof Input> = {
     component: Input,
-    title: "gle-components/InputField",
+    title: "gle-components/Input",
     argTypes: {},
 };
 export default meta;
