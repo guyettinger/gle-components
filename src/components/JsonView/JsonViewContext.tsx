@@ -39,27 +39,41 @@ type JsonViewReducerAction =
     | JsonViewRenameAction
     | JsonViewUpdateAction
 
-const jsonViewReducer = (json:any, action: JsonViewReducerAction): void => {
+const jsonViewReducer = (json: any, action: JsonViewReducerAction): void => {
+    const separator = '.'
     switch (action.type) {
-        case JsonViewReducerActionTypes.add:
+        case JsonViewReducerActionTypes.add: {
             set(json, action.path, action.value)
             break
-        case JsonViewReducerActionTypes.remove:
-            unset(json, action.path)
+        }
+        case JsonViewReducerActionTypes.remove: {
+            const isArrayPath = action.path.endsWith(']')
+            if (isArrayPath) {
+                const arrayIndex = parseInt(action.path.split(/[\[\]]/).filter(v => !!v).pop()!)
+                const arrayIndexPart = `[${arrayIndex}]`
+                const arrayPath = action.path.slice(0, action.path.lastIndexOf(arrayIndexPart))
+                const array = get(json, arrayPath)
+                array.splice(arrayIndex, 1)
+                set(json, arrayPath, [...array])
+            } else {
+                unset(json, action.path)
+            }
             break
-        case JsonViewReducerActionTypes.rename:
+        }
+        case JsonViewReducerActionTypes.rename: {
             const value = get(json, action.path)
-            const separator = '.'
             const pathArray = action.path.split(separator)
-            const parentPathArray = pathArray.slice(0,pathArray.length - 2)
+            const parentPathArray = pathArray.slice(0, pathArray.length - 2)
             const newPathArray = [...parentPathArray, action.name]
             const newPath = newPathArray.join(separator)
             unset(json, action.path)
             set(json, newPath, value)
             break
-        case JsonViewReducerActionTypes.update:
+        }
+        case JsonViewReducerActionTypes.update: {
             set(json, action.path, action.value)
             break
+        }
     }
 }
 
