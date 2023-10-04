@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import Input from "./Input";
+import { InputProps } from "./Input.types";
 
 const meta: Meta<typeof Input> = {
     component: Input,
@@ -10,38 +11,59 @@ export default meta;
 
 type Story = StoryObj<typeof Input>;
 
-export const Primary: Story = (args:any) => (
-    <Input data-testId="Input-id" {...args} />
+const StoryTemplate = (args: InputProps) => {
+    return (
+        <div>
+            <h3>Small</h3>
+            <div>
+                <Input data-testId="Input-id" variant="small" {...args}/>
+            </div>
+
+            <h2>Medium</h2>
+            <div>
+                <Input data-testId="Input-id" variant="medium" {...args}/>
+            </div>
+
+            <h1>Large</h1>
+            <div>
+                <Input data-testId="Input-id" variant="large" {...args}/>
+            </div>
+        </div>
+    )
+};
+
+export const Primary: Story = (args: InputProps) => (
+    <StoryTemplate {...args}/>
 );
 Primary.args = {
     error: false,
     disabled: false,
-    placeholder: "Primary",
+    placeholder: "Placeholder"
 };
 
-export const Success: Story = (args:any) => (
-    <Input data-testId="Input-id" {...args} />
+export const Success: Story = (args: InputProps) => (
+    <StoryTemplate {...args}/>
 );
 Success.args = {
     error: false,
     success: true,
     disabled: false,
-    placeholder: "Success",
+    placeholder: "Placeholder"
 };
 
-export const Error: Story = (args:any) => (
-    <Input data-testId="Input-id" {...args} />
+export const Error: Story = (args: InputProps) => (
+    <StoryTemplate {...args}/>
 );
 Error.args = {
     error: true,
     disabled: false,
-    placeholder: "Error",
+    placeholder: "Placeholder"
 };
 
-export const Disabled: Story = (args:any) => (
-    <Input data-testId="Input-id" {...args} />
+export const Disabled: Story = (args: InputProps) => (
+    <StoryTemplate {...args}/>
 );
 Disabled.args = {
     disabled: true,
-    placeholder: "Disabled",
+    placeholder: "Placeholder"
 };

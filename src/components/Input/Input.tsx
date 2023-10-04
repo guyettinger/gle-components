@@ -5,7 +5,7 @@ import { InputProps } from "./Input.types";
 const StyledInput = styled.input<InputProps>`
   height: ${(props) =>
           props.variant === "small"
-                  ? "16px"
+                  ? "11px"
                   : props.variant === "medium"
                           ? "24px"
                           : "40px"};;
@@ -19,13 +19,6 @@ const StyledInput = styled.input<InputProps>`
                                   ? "#067d68"
                                   : "#353637"};
   background-color: #fff;
-  margin: ${(props) =>
-          props.variant === "small"
-                  ? "-2px 0 -6px -2px"
-                  : props.variant === "medium"
-                          ? "0"
-                          : "0"};
-
   &:focus {
     border: solid 2px #1b116e;
   }
