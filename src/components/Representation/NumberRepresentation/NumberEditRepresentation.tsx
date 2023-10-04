@@ -38,6 +38,7 @@ const NumberEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentatio
         <InputContainer>
             <Input ref={inputRef as Ref<HTMLInputElement>}
                    type="number"
+                   variant="small"
                    value={inputValue}
                    onKeyDown={handleKeyDown}
                    onChange={handleInputChange}/>

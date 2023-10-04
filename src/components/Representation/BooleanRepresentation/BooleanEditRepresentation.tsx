@@ -53,6 +53,7 @@ const BooleanEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentati
                 true
                 <Input name="boolean"
                        type="radio"
+                       variant="small"
                        value="true"
                        checked={inputValue}
                        onKeyDown={handleKeyDown}
@@ -62,6 +63,7 @@ const BooleanEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentati
                 false
                 <Input name="boolean"
                        type="radio"
+                       variant="small"
                        value="false"
                        checked={!inputValue}
                        onKeyDown={handleKeyDown}

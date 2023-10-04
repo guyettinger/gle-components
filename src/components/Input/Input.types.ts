@@ -8,5 +8,6 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     success?: boolean
     disabled?: boolean
     placeholder?: string
+    variant?: "small" | "medium" | "large"
     onChange?: ChangeEventHandler<HTMLInputElement>
 }
