@@ -14,7 +14,7 @@ const JsonArrayNode = ({value, path}: JsonArrayViewProps) => {
             <StyledUl>
                 {
                     value.map((arrayValue: JsonValue, arrayIndex: number) => {
-                        return <JsonNode key={JSON.stringify(arrayValue)}
+                        return <JsonNode key={`${arrayIndex}:${JSON.stringify(arrayValue)}`}
                                          title={`${arrayIndex}`}
                                          path={path ? `${path}[${arrayIndex}]` : `[${arrayIndex}]`}
                                          value={arrayValue}/>
