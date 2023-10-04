@@ -26,11 +26,11 @@ const JsonNode = ({title, path, value}: JsonNodeViewProps) => {
     const [isMouseOver, setIsMouseOver] = useState<boolean>(false)
     const api = useJsonViewApiContext()
 
-    const handleMouseEnter = (e: any) => {
+    const handleMouseEnter = () => {
         setIsMouseOver(true)
     }
 
-    const handleMouseLeave = (e: any) => {
+    const handleMouseLeave = () => {
         setIsMouseOver(false)
     }
 
