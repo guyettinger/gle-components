@@ -23,11 +23,14 @@ const StringEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentatio
 
     const handleKeyDown = (e: any) => {
         const {key} = e;
-        const keys = ["Escape", "Tab"]
-        const enterKey = "Enter"
-        const allKeys = [...keys, enterKey]
-        if (allKeys.indexOf(key) > -1) {
+        const submitKeys = [ "Enter"]
+        if (submitKeys.indexOf(key) > -1) {
             onSubmit(inputValue)
+        }
+
+        const cancelKeys = ["Escape", "Tab"]
+        if (cancelKeys.indexOf(key) > -1) {
+            onCancel()
         }
     }
 

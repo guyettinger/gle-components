@@ -7,6 +7,13 @@ const InputContainer = styled.span`
   display: inline-flex;
 `
 
+const RadioLabel = styled.label`
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`
+
 const BooleanEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentationProps<boolean>) => {
     const [inputValue, setInputValue] = useState<boolean>(value)
     const inputRef = useRef<HTMLInputElement>()
@@ -17,35 +24,49 @@ const BooleanEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentati
         }
     }, [inputRef]);
 
-    const handleInputChange = (e:ChangeEvent<HTMLInputElement>) => {
-        const booleanValue = e.target.value.toLowerCase() === 'true'
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const booleanValue = e.target.value === 'true'
         setInputValue(booleanValue)
+        onSubmit(booleanValue)
     }
 
     const handleKeyDown = (e: any) => {
         const {key} = e;
-        const keys = ["Escape", "Tab"]
-        const enterKey = "Enter"
-        const allKeys = [...keys, enterKey]
-        if (allKeys.indexOf(key) > -1) {
+        const submitKeys = [ "Enter"]
+        if (submitKeys.indexOf(key) > -1) {
             onSubmit(inputValue)
+        }
+
+        const cancelKeys = ["Escape", "Tab"]
+        if (cancelKeys.indexOf(key) > -1) {
+            onCancel()
         }
     }
 
+    const handleClick = (e: any) => {
+        e.stopPropagation();
+    }
+
     return (
-        <InputContainer>
-            <Input ref={inputRef as Ref<HTMLInputElement>}
-                   name="boolean"
-                   type="radio"
-                   value="true"
-                   onKeyDown={handleKeyDown}
-                   onChange={handleInputChange}/>
-            <Input ref={inputRef as Ref<HTMLInputElement>}
-                   name="boolean"
-                   type="radio"
-                   value="false"
-                   onKeyDown={handleKeyDown}
-                   onChange={handleInputChange}/>
+        <InputContainer onClick={handleClick}>
+            <RadioLabel className="radio">
+                true
+                <Input name="boolean"
+                       type="radio"
+                       value="true"
+                       checked={inputValue}
+                       onKeyDown={handleKeyDown}
+                       onChange={handleInputChange}/>
+            </RadioLabel>
+            <RadioLabel className="radio">
+                false
+                <Input name="boolean"
+                       type="radio"
+                       value="false"
+                       checked={!inputValue}
+                       onKeyDown={handleKeyDown}
+                       onChange={handleInputChange}/>
+            </RadioLabel>
         </InputContainer>
     )
 }
