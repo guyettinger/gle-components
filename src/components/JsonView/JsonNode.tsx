@@ -1,25 +1,28 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { MdRemoveCircleOutline } from "react-icons/md";
 import { JsonNodeViewProps } from "./JsonView.types";
 import { useJsonViewApiContext } from "./JsonViewContext";
 import JsonNodeTitle from "./JsonNodeTitle";
 import JsonNodeValue from "./JsonNodeValue"
-import Button from "../Button/Button";
 
 const JsonNodeContent = styled.li`
-  display: flex;
 `
 
-const JsonNodeTitleContainer = styled.div`
-  flex-basis: fit-content;
+const JsonNodeTitleContainer = styled.span`
   padding-right: 4px;
 `
 
-const JsonNodeValueContainer = styled.div`
-  flex-basis: fit-content;
+const JsonNodeValueContainer = styled.span`
 `
 
-const JsonNodeActionContainer = styled.div`
+const JsonNodeActionContainer = styled.span`
+  position: absolute;
+  vertical-align: middle;
+  padding-left: 4px;
+`
+
+const RemoveIcon = styled(MdRemoveCircleOutline)`
 `
 
 const JsonNode = ({title, path, value}: JsonNodeViewProps) => {
@@ -48,12 +51,12 @@ const JsonNode = ({title, path, value}: JsonNodeViewProps) => {
             }
             <JsonNodeValueContainer>
                 <JsonNodeValue value={value} path={path}/>
+                {isMouseOver &&
+                    <JsonNodeActionContainer>
+                        <RemoveIcon onClick={handleRemoveClick}/>
+                    </JsonNodeActionContainer>
+                }
             </JsonNodeValueContainer>
-            {isMouseOver &&
-                <JsonNodeActionContainer>
-                    <Button size="small" text="Remove" onClick={handleRemoveClick}/>
-                </JsonNodeActionContainer>
-            }
         </JsonNodeContent>
     )
 }

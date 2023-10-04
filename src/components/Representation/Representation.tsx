@@ -50,18 +50,18 @@ const Representation = <T extends unknown>
     }
 
     return (
-        <div>
+        <span>
             {currentRepresentationType === RepresentationTypes.view &&
-                <div onClick={handleViewClick}>
+                <span onClick={handleViewClick}>
                     <ViewRepresentation value={currentValue}/>
-                </div>
+                </span>
             }
             {currentRepresentationType === RepresentationTypes.edit &&
-                <div onBlur={handleEditBlur}>
+                <span onBlur={handleEditBlur}>
                     <EditRepresentation value={currentValue} onSubmit={handleSubmit} onCancel={handleCancel}/>
-                </div>
+                </span>
             }
-        </div>
+        </span>
     )
 }
 

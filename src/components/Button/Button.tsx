@@ -39,8 +39,8 @@ const Button =
          size,
          primary,
          disabled,
-         text,
          onClick,
+         children,
          ...props
      }: ButtonProps) => {
         return (
@@ -51,7 +51,7 @@ const Button =
                 disabled={disabled}
                 size={size}
                 {...props}>
-                {text}
+                {children}
             </StyledButton>
         )
     }
