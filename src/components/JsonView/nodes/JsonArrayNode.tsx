@@ -7,7 +7,7 @@ import { useJsonViewApiContext } from "../JsonViewContext";
 
 const JsonArrayContainer = styled.span`
 `
-const JsonArrayHeader = styled.li`
+const JsonArrayHeader = styled.span`
 `
 
 const JsonArrayFooter = styled.span`
