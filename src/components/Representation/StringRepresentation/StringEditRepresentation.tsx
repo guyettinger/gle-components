@@ -1,6 +1,11 @@
-import { EditRepresentationProps } from "../Representation.types";
 import { ChangeEvent, Ref, useEffect, useRef, useState } from "react";
+import styled from "styled-components";
 import Input from "../../Input/Input";
+import { EditRepresentationProps } from "../Representation.types";
+
+const InputContainer = styled.span`
+  display: inline-flex;
+`
 
 const StringEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentationProps<string>) => {
     const [inputValue, setInputValue] = useState<string>(value)
@@ -27,13 +32,13 @@ const StringEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentatio
     }
 
     return (
-        <div>
+        <InputContainer>
             <Input ref={inputRef as Ref<HTMLInputElement>}
                    type="text"
                    value={inputValue}
                    onKeyDown={handleKeyDown}
                    onChange={handleInputChange}/>
-        </div>
+        </InputContainer>
     )
 }
 

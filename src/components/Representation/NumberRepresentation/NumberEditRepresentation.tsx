@@ -1,7 +1,11 @@
-import { EditRepresentationProps } from "../Representation.types";
 import { ChangeEvent, Ref, useEffect, useRef, useState } from "react";
+import styled from "styled-components";
+import { EditRepresentationProps } from "../Representation.types";
 import Input from "../../Input/Input";
 
+const InputContainer = styled.span`
+  display: inline-flex;
+`
 const NumberEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentationProps<number>) => {
     const [inputValue, setInputValue] = useState<number>(value)
     const inputRef = useRef<HTMLInputElement>()
@@ -12,7 +16,7 @@ const NumberEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentatio
         }
     }, [inputRef]);
 
-    const handleInputChange = (e:ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         const numberValue = Number.parseFloat(e.target.value)
         setInputValue(numberValue)
     }
@@ -28,13 +32,13 @@ const NumberEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentatio
     }
 
     return (
-        <div>
+        <InputContainer>
             <Input ref={inputRef as Ref<HTMLInputElement>}
                    type="number"
                    value={inputValue}
                    onKeyDown={handleKeyDown}
                    onChange={handleInputChange}/>
-        </div>
+        </InputContainer>
     )
 }
 
