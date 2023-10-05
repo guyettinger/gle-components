@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { MdAddCircleOutline } from "react-icons/md";
 import { MdRemoveCircleOutline } from "react-icons/md";
 import { JsonNodeViewProps } from "./JsonView.types";
 import { useJsonViewApiContext } from "./JsonViewContext";
@@ -25,6 +26,9 @@ const JsonNodeActionContainer = styled.span`
 const RemoveIcon = styled(MdRemoveCircleOutline)`
 `
 
+const AddIcon = styled(MdAddCircleOutline)`
+`
+
 const JsonNode = ({title, path, value}: JsonNodeViewProps) => {
     const [isMouseOver, setIsMouseOver] = useState<boolean>(false)
     const api = useJsonViewApiContext()
@@ -35,6 +39,9 @@ const JsonNode = ({title, path, value}: JsonNodeViewProps) => {
 
     const handleMouseLeave = () => {
         setIsMouseOver(false)
+    }
+    const handleAddClick = (e: any) => {
+        e.stopPropagation()
     }
 
     const handleRemoveClick = (e: any) => {
@@ -53,6 +60,7 @@ const JsonNode = ({title, path, value}: JsonNodeViewProps) => {
                 <JsonNodeValue value={value} path={path}/>
                 {isMouseOver &&
                     <JsonNodeActionContainer>
+                        <AddIcon onClick={handleAddClick}/>
                         <RemoveIcon onClick={handleRemoveClick}/>
                     </JsonNodeActionContainer>
                 }

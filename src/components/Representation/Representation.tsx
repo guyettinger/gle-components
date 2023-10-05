@@ -1,6 +1,5 @@
-import { RepresentationProps, RepresentationTypes } from "./Representation.types";
 import { useState } from "react";
-
+import { RepresentationProps, RepresentationTypes } from "./Representation.types";
 
 const Representation = <T extends unknown>
 (
