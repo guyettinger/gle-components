@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/react";
+import { GLEComponentThemeStorybookSwitcher, withGLEComponentTheme } from "../src";
 
 const preview: Preview = {
   parameters: {
@@ -11,5 +12,9 @@ const preview: Preview = {
     },
   },
 };
+
+export const globalTypes = Object.assign({}, GLEComponentThemeStorybookSwitcher)
+
+export const decorators = [withGLEComponentTheme]
 
 export default preview;
