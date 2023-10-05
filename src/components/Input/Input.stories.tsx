@@ -16,17 +16,17 @@ const StoryTemplate = (args: InputProps) => {
         <div>
             <h3>Small</h3>
             <div>
-                <Input data-testId="Input-id" variant="small" {...args}/>
+                <Input data-testid="Input-id" variant="small" {...args}/>
             </div>
 
             <h2>Medium</h2>
             <div>
-                <Input data-testId="Input-id" variant="medium" {...args}/>
+                <Input data-testid="Input-id" variant="medium" {...args}/>
             </div>
 
             <h1>Large</h1>
             <div>
-                <Input data-testId="Input-id" variant="large" {...args}/>
+                <Input data-testid="Input-id" variant="large" {...args}/>
             </div>
         </div>
     )

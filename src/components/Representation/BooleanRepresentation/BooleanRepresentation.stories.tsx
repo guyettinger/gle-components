@@ -20,7 +20,7 @@ export const Boolean: Story = (args: any) => {
     };
 
     return (
-        <BooleanRepresentation data-testId="BooleanRepresentation-id" {...args} value={value} onSubmit={handleSubmit}/>
+        <BooleanRepresentation data-testid="BooleanRepresentation-id" {...args} value={value} onSubmit={handleSubmit}/>
     )
 }
 Boolean.args = {

@@ -20,7 +20,7 @@ export const String: Story = (args: any) => {
     };
 
     return (
-        <StringRepresentation data-testId="StringRepresentation-id" {...args} value={value} onSubmit={handleSubmit}/>
+        <StringRepresentation data-testid="StringRepresentation-id" {...args} value={value} onSubmit={handleSubmit}/>
     )
 }
 String.args = {

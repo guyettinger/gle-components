@@ -15,12 +15,12 @@ const StyledButton = styled.button<ButtonProps>`
                   : props.size === "medium"
                           ? "9px 30px 11px"
                           : "14px 30px 16px"};
-  color: ${(props) => (props.primary ? "#1b116e" : "#ffffff")};
-  background-color: ${(props) => (props.primary ? "#6bedb5" : "#1b116e")};
-  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+  color: ${(props) => (props.$primary ? "#1b116e" : "#ffffff")};
+  background-color: ${(props) => (props.$primary ? "#6bedb5" : "#1b116e")};
+  opacity: ${(props) => (props.$disabled ? 0.5 : 1)};
 
   &:hover {
-    background-color: ${(props) => (props.primary ? "#55bd90" : "#6bedb5")};
+    background-color: ${(props) => (props.$primary ? "#55bd90" : "#6bedb5")};
   }
 
   &:active {
@@ -47,8 +47,8 @@ const Button =
             <StyledButton
                 type="button"
                 onClick={onClick}
-                primary={primary}
-                disabled={disabled}
+                $primary={primary}
+                $disabled={disabled}
                 size={size}
                 {...props}>
                 {children}

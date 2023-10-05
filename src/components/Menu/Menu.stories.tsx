@@ -13,7 +13,7 @@ export default meta;
 type Story = StoryObj<typeof Menu>;
 
 export const Primary: Story = (args: MenuProps) => (
-    <Menu data-testId="Menu-id" {...args} >
+    <Menu data-testid="Menu-id" {...args} >
         <MenuItem label="Undo" onClick={() => console.log("Undo")}/>
         <MenuItem label="Redo" disabled/>
         <MenuItem label="Cut"/>

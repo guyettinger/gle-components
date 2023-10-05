@@ -6,32 +6,32 @@ import Input from "../Input/Input";
 const StyledInput = styled(Input)`
 `
 
-const StyledLabel = styled.div<InputFieldProps>`
+const StyledLabel = styled.div`
   font-size: 14px;
   color: ${(props) => (props.disabled ? "#e4e3ea" : "#080808")};
   padding-bottom: ${(props) =>
-          props.variant === "small"
+          props.$variant === "small"
                   ? "0px"
-                  : props.variant === "medium"
+                  : props.$variant === "medium"
                           ? "4px"
                           : "6px"};;
 `
 
-const StyledMessage = styled.div<InputFieldProps>`
+const StyledMessage = styled.div`
   font-size: 14px;
   color: #a9150b;
   padding-top: ${(props) =>
-          props.variant === "small"
+          props.$variant === "small"
                   ? "0px"
-                  : props.variant === "medium"
+                  : props.$variant === "medium"
                           ? "2px"
                           : "4px"};
 `
 
-const StyledText = styled.p<InputFieldProps>`
+const StyledText = styled.p`
   margin: 0;
   color: ${(props) =>
-          props.disabled ? "#e4e3ea" : props.error ? "#a9150b" : "#080808"};
+          props.disabled ? "#e4e3ea" : props.$error ? "#a9150b" : "#080808"};
 `
 
 const InputField =
@@ -50,8 +50,8 @@ const InputField =
         }: InputFieldProps, ref) => {
         return (
             <Fragment>
-                <StyledLabel variant={variant}>
-                    <StyledText disabled={disabled} error={error}>
+                <StyledLabel $variant={variant}>
+                    <StyledText disabled={disabled} $error={error}>
                         {label}
                     </StyledText>
                 </StyledLabel>
@@ -67,8 +67,8 @@ const InputField =
                     variant={variant}
                     {...props}>
                 </StyledInput>
-                <StyledMessage variant={variant}>
-                    <StyledText error={error}>{message}</StyledText>
+                <StyledMessage $variant={variant}>
+                    <StyledText $error={error}>{message}</StyledText>
                 </StyledMessage>
             </Fragment>
         )

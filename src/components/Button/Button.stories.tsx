@@ -12,7 +12,7 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = (args:ButtonProps) => (
-    <Button data-testId="Button-id" {...args} />
+    <Button data-testid="Button-id" {...args} />
 );
 Primary.args = {
     primary: true,
@@ -21,7 +21,7 @@ Primary.args = {
 };
 
 export const Secondary: Story = (args:ButtonProps) => (
-    <Button data-testId="Button-id" {...args} />
+    <Button data-testid="Button-id" {...args} />
 );
 Secondary.args = {
     primary: false,
@@ -30,7 +30,7 @@ Secondary.args = {
 };
 
 export const Disabled: Story = (args:ButtonProps) => (
-    <Button data-testId="Button-id" {...args} />
+    <Button data-testid="Button-id" {...args} />
 );
 Disabled.args = {
     primary: false,
@@ -39,7 +39,7 @@ Disabled.args = {
 };
 
 export const Small: Story = (args:ButtonProps) => (
-    <Button data-testId="Button-id" {...args} />
+    <Button data-testid="Button-id" {...args} />
 );
 Small.args = {
     primary: true,
@@ -49,7 +49,7 @@ Small.args = {
 };
 
 export const Medium: Story = (args:ButtonProps) => (
-    <Button data-testId="Button-id" {...args} />
+    <Button data-testid="Button-id" {...args} />
 );
 Medium.args = {
     primary: true,
@@ -59,7 +59,7 @@ Medium.args = {
 };
 
 export const Large: Story = (args:ButtonProps) => (
-    <Button data-testId="Button-id" {...args} />
+    <Button data-testid="Button-id" {...args} />
 );
 Large.args = {
     primary: true,

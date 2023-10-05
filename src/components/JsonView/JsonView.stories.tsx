@@ -12,7 +12,7 @@ export default meta;
 type Story = StoryObj<typeof JsonView>;
 
 export const Primary: Story = (args:JsonViewProps) => (
-    <JsonView data-testId="JsonView-id" {...args} />
+    <JsonView data-testid="JsonView-id" {...args} />
 );
 Primary.args = {
     json: {

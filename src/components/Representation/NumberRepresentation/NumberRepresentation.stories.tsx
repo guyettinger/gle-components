@@ -20,7 +20,7 @@ export const Number: Story = (args: any) => {
     };
 
     return (
-        <NumberRepresentation data-testId="NumberRepresentation-id" {...args} value={value} onSubmit={handleSubmit}/>
+        <NumberRepresentation data-testid="NumberRepresentation-id" {...args} value={value} onSubmit={handleSubmit}/>
     )
 }
 Number.args = {
