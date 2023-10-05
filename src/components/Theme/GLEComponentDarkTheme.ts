@@ -1,8 +1,11 @@
 import { GLEComponentTheme } from "./GLEComponentTheme.types";
 
-const GLEComponentLightTheme: GLEComponentTheme = {
+const GLEComponentDarkTheme: GLEComponentTheme = {
     main: 'mediumseagreen',
-    secondary: 'white'
+    secondary: 'white',
+    color: {
+        screenBackground: 'black'
+    }
 };
 
-export default GLEComponentLightTheme
+export default GLEComponentDarkTheme

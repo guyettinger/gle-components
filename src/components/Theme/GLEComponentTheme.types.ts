@@ -2,7 +2,10 @@ import { ReactNode } from "react";
 
 export interface GLEComponentTheme {
     main: string,
-    secondary: string
+    secondary: string,
+    color: {
+        screenBackground: string
+    }
 }
 
 export interface GLEComponentThemeProviderProps {
