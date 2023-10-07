@@ -1,6 +1,15 @@
 import { baseColors } from "./baseColors";
 
 export const color = {
+    buttonRegularBackground: baseColors.grey.dark4,
+    buttonRegularBackgroundHover: baseColors.grey.dark3,
+    buttonRegularForeground: baseColors.white,
+    buttonRegularActiveBorderColor: baseColors.black,
+    buttonPrimaryBackground: baseColors.blue.dark4,
+    buttonPrimaryBackgroundHover: baseColors.blue.dark3,
+    buttonPrimaryForeground: baseColors.white,
+    buttonPrimaryActiveBorderColor: baseColors.black,
+
     accentText: baseColors.black,
     badgeBackground: baseColors.grey.light4,
     badgeText: baseColors.grey.dark2,

@@ -4,7 +4,7 @@ import { spacing, color, borderRadius, boxShadow, typography } from "./Variables
 
 declare module 'styled-components' {
     export interface DefaultTheme {
-        gleComponent: {
+        gle: {
             name: string
             fonts: {
                 family: string

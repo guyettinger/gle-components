@@ -15,16 +15,16 @@ const StyledButton = styled.button<{$primary?:boolean, $size?:string, disabled?:
                   : props.$size === "medium"
                           ? "9px 30px 11px"
                           : "14px 30px 16px"};
-  color: ${(props) => (props.$primary ? "#1b116e" : "#ffffff")};
-  background-color: ${(props) => (props.$primary ? "#6bedb5" : "#1b116e")};
+  color: ${(props) => (props.$primary ? props.theme.gle.color.buttonPrimaryForeground : props.theme.gle.color.buttonRegularForeground)};
+  background-color: ${(props) => (props.$primary ? props.theme.gle.color.buttonPrimaryBackground: props.theme.gle.color.buttonRegularBackground)};
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
 
   &:hover {
-    background-color: ${(props) => (props.$primary ? "#55bd90" : "#6bedb5")};
+    background-color: ${(props) => (props.$primary ? props.theme.gle.color.buttonPrimaryBackgroundHover : props.theme.gle.color.buttonRegularBackgroundHover)};
   }
 
   &:active {
-    border: solid 2px #1b116e;
+    border: solid 2px ${(props) => (props.$primary ? props.theme.gle.color.buttonPrimaryActiveBorderColor : props.theme.gle.color.buttonRegularActiveBorderColor)};
     padding: ${(props) =>
             props.$size === "small"
                     ? "5px 23px 6px"

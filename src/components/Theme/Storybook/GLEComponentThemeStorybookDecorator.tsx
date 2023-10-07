@@ -19,7 +19,7 @@ const ThemeBlock = styled.div<{ left?: boolean; $fill?: boolean }>(
           bottom: 0;
           overflow: auto;
           padding: 1rem;
-          background: ${theme.gleComponent.color.screenBackground};
+          background: ${theme.gle.color.screenBackground};
 
           ${breakpoints.S} {
             left: ${left ? 0 : '50vw'};

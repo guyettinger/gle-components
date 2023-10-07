@@ -2,7 +2,7 @@ import { GLEComponentTheme } from "./GLEComponentTheme.types";
 import GLEComponentLightTheme from "./GLEComponentLightTheme";
 
 const GLEComponentDefaultTheme: GLEComponentTheme = {
-    gleComponent: {
+    gle: {
         ...GLEComponentLightTheme.gleComponent
     }
 };

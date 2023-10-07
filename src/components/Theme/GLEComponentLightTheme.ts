@@ -2,7 +2,7 @@ import { borderRadius, boxShadow, color, spacing, typography } from "./Variables
 import { GLEComponentTheme } from "./GLEComponentTheme.types";
 
 const GLEComponentLightTheme: GLEComponentTheme = {
-    gleComponent : {
+    gle : {
         borderRadius,
         boxShadow,
         color,

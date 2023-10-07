@@ -3,14 +3,24 @@ import GLEComponentLightTheme from "./GLEComponentLightTheme";
 import { baseColors, boxShadow } from "./Variables";
 
 const GLEComponentDarkTheme: GLEComponentTheme = {
-    gleComponent: {
+    gle: {
         ...GLEComponentLightTheme.gleComponent,
         boxShadow: {
             ...boxShadow,
             outerBorder: `0 0 0 2px ${baseColors.blue.dark5}, 0 0 0 4px ${baseColors.blue.base}`,
         },
         color: {
-            ...GLEComponentLightTheme.gleComponent.color,
+            ...GLEComponentLightTheme.gle.color,
+            buttonRegularBackground: baseColors.grey.light4,
+            buttonRegularBackgroundHover: baseColors.grey.light3,
+            buttonRegularForeground: baseColors.black,
+            buttonRegularActiveBorderColor: baseColors.black,
+            buttonPrimaryBackground: baseColors.blue.light4,
+            buttonPrimaryBackgroundHover: baseColors.blue.light3,
+            buttonPrimaryForeground: baseColors.black,
+            buttonPrimaryActiveBorderColor: baseColors.black,
+
+
             badgeBackground: baseColors.grey.dark4,
             badgeText: baseColors.grey.light1,
             cartButtonText: baseColors.grey.dark2,
