@@ -1,11 +1,24 @@
 import { ReactNode } from "react";
+import { DefaultTheme } from "styled-components";
+import { spacing, color, borderRadius, boxShadow, typography } from "./Variables";
 
-export interface GLEComponentTheme {
-    main: string,
-    secondary: string,
-    color: {
-        screenBackground: string
+declare module 'styled-components' {
+    export interface DefaultTheme {
+        gleComponent: {
+            name: string
+            fonts: {
+                family: string
+            }
+            spacing: typeof spacing
+            color: typeof color
+            borderRadius: typeof borderRadius
+            boxShadow: typeof boxShadow
+            typography: typeof typography
+        }
     }
+}
+
+export interface GLEComponentTheme extends DefaultTheme {
 }
 
 export interface GLEComponentThemeProviderProps {

@@ -1,10 +1,17 @@
+import { borderRadius, boxShadow, color, spacing, typography } from "./Variables";
 import { GLEComponentTheme } from "./GLEComponentTheme.types";
 
 const GLEComponentLightTheme: GLEComponentTheme = {
-    main: 'mediumseagreen',
-    secondary: 'white',
-    color: {
-        screenBackground: 'white'
+    gleComponent : {
+        borderRadius,
+        boxShadow,
+        color,
+        fonts: {
+            family: 'NunitoSans, sans-serif',
+        },
+        name: 'light',
+        spacing,
+        typography,
     }
 };
 

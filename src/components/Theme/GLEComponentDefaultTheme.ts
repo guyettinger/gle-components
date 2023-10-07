@@ -1,10 +1,9 @@
 import { GLEComponentTheme } from "./GLEComponentTheme.types";
+import GLEComponentLightTheme from "./GLEComponentLightTheme";
 
 const GLEComponentDefaultTheme: GLEComponentTheme = {
-    main: 'mediumseagreen',
-    secondary: 'white',
-    color: {
-        screenBackground: 'white'
+    gleComponent: {
+        ...GLEComponentLightTheme.gleComponent
     }
 };
 
