@@ -11,10 +11,10 @@ export default meta;
 
 type Story = StoryObj<typeof JsonView>;
 
-export const Primary: Story = (args:JsonViewProps) => (
+export const Default: Story = (args:JsonViewProps) => (
     <JsonView data-testid="JsonView-id" {...args} />
 );
-Primary.args = {
+Default.args = {
     json: {
         firstName: "Teeny",
         lastName: "Bettini",

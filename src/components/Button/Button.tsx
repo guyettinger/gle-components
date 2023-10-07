@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ButtonProps } from "./Button.types";
 
-const StyledButton = styled.button<{$primary?:boolean, $size?:string, disabled?:boolean}>`
+const StyledButton = styled.button<{ $primary?: boolean, $variant?: string, disabled?: boolean }>`
   border: 0;
   line-height: 1;
   font-size: 15px;
@@ -10,25 +10,25 @@ const StyledButton = styled.button<{$primary?:boolean, $size?:string, disabled?:
   border-radius: 3px;
   display: inline-block;
   padding: ${(props) =>
-          props.$size === "small"
+          props.$variant === "small"
                   ? "7px 25px 8px"
-                  : props.$size === "medium"
+                  : props.$variant === "medium"
                           ? "9px 30px 11px"
                           : "14px 30px 16px"};
-  color: ${(props) => (props.$primary ? props.theme.gle.color.buttonPrimaryForeground : props.theme.gle.color.buttonRegularForeground)};
-  background-color: ${(props) => (props.$primary ? props.theme.gle.color.buttonPrimaryBackground: props.theme.gle.color.buttonRegularBackground)};
+  color: ${(props) => (props.$primary ? props.theme.gle.color.buttonPrimaryForeground : props.theme.gle.color.buttonForeground)};
+  background-color: ${(props) => (props.$primary ? props.theme.gle.color.buttonPrimaryBackground : props.theme.gle.color.buttonBackground)};
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
 
   &:hover {
-    background-color: ${(props) => (props.$primary ? props.theme.gle.color.buttonPrimaryBackgroundHover : props.theme.gle.color.buttonRegularBackgroundHover)};
+    background-color: ${(props) => (props.$primary ? props.theme.gle.color.buttonPrimaryBackgroundHover : props.theme.gle.color.buttonBackgroundHover)};
   }
 
   &:active {
-    border: solid 2px ${(props) => (props.$primary ? props.theme.gle.color.buttonPrimaryActiveBorderColor : props.theme.gle.color.buttonRegularActiveBorderColor)};
+    border: solid 2px ${(props) => (props.$primary ? props.theme.gle.color.buttonPrimaryActiveBorderColor : props.theme.gle.color.buttonActiveBorderColor)};
     padding: ${(props) =>
-            props.$size === "small"
+            props.$variant === "small"
                     ? "5px 23px 6px"
-                    : props.$size === "medium"
+                    : props.$variant === "medium"
                             ? "7px 28px 9px"
                             : "12px 28px 14px"};
   }
@@ -36,7 +36,7 @@ const StyledButton = styled.button<{$primary?:boolean, $size?:string, disabled?:
 
 const Button =
     ({
-         size,
+         variant,
          primary,
          disabled,
          onClick,
@@ -49,7 +49,7 @@ const Button =
                 onClick={onClick}
                 disabled={disabled}
                 $primary={primary}
-                $size={size}
+                $variant={variant}
                 {...props}>
                 {children}
             </StyledButton>

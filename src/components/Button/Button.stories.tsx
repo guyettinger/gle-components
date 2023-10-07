@@ -11,59 +11,55 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
+const StoryTemplate = (args: ButtonProps) => {
+    return (
+        <div>
+            <div>
+                <h3>Small</h3>
+                <p>
+                    <Button data-testid="Button-id" {...args} variant="small"/>
+                </p>
+                <h3>Small - disabled</h3>
+                <p>
+                    <Button data-testid="Button-id" {...args} variant="small" disabled={true}/>
+                </p>
+            </div>
+            <div>
+                <h2>Medium</h2>
+                <p>
+                    <Button data-testid="Button-id" {...args} variant="medium"/>
+                </p>
+                <h2>Medium - disabled</h2>
+                <p>
+                    <Button data-testid="Button-id" {...args} variant="medium" disabled={true}/>
+                </p>
+            </div>
+            <div>
+                <h1>Large</h1>
+                <p>
+                    <Button data-testid="Button-id" {...args} variant="large"/>
+                </p>
+                <h1>Large - disabled</h1>
+                <p>
+                    <Button data-testid="Button-id" {...args} variant="large" disabled={true}/>
+                </p>
+            </div>
+        </div>
+    )
+};
+
+export const Default: Story = (args:ButtonProps) => (
+    <StoryTemplate {...args}/>
+);
+Default.args = {
+    primary: false,
+    children: "Default",
+};
+
 export const Primary: Story = (args:ButtonProps) => (
-    <Button data-testid="Button-id" {...args} />
+    <StoryTemplate {...args}/>
 );
 Primary.args = {
     primary: true,
-    disabled: false,
     children: "Primary",
-};
-
-export const Secondary: Story = (args:ButtonProps) => (
-    <Button data-testid="Button-id" {...args} />
-);
-Secondary.args = {
-    primary: false,
-    disabled: false,
-    children: "Secondary",
-};
-
-export const Disabled: Story = (args:ButtonProps) => (
-    <Button data-testid="Button-id" {...args} />
-);
-Disabled.args = {
-    primary: false,
-    disabled: true,
-    children: "Disabled",
-};
-
-export const Small: Story = (args:ButtonProps) => (
-    <Button data-testid="Button-id" {...args} />
-);
-Small.args = {
-    primary: true,
-    disabled: false,
-    size: "small",
-    children: "Small",
-};
-
-export const Medium: Story = (args:ButtonProps) => (
-    <Button data-testid="Button-id" {...args} />
-);
-Medium.args = {
-    primary: true,
-    disabled: false,
-    size: "medium",
-    children: "Medium",
-};
-
-export const Large: Story = (args:ButtonProps) => (
-    <Button data-testid="Button-id" {...args} />
-);
-Large.args = {
-    primary: true,
-    disabled: false,
-    size: "large",
-    children: "Large",
 };

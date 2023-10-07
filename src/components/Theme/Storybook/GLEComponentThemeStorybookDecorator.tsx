@@ -4,7 +4,6 @@ import GLEComponentThemeProvider from "../GLEComponentThemeProvider";
 import GLEComponentLightTheme from "../GLEComponentLightTheme";
 import GLEComponentDarkTheme from "../GLEComponentDarkTheme";
 import { breakpoints } from "../Variables";
-import { GLEComponentTheme } from "../GLEComponentTheme.types";
 
 const ThemeBlock = styled.div<{ left?: boolean; $fill?: boolean }>(
     ({left = false, $fill = false, theme}) =>

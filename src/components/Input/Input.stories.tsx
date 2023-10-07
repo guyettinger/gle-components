@@ -32,10 +32,10 @@ const StoryTemplate = (args: InputProps) => {
     )
 };
 
-export const Primary: Story = (args: InputProps) => (
+export const Default: Story = (args: InputProps) => (
     <StoryTemplate {...args}/>
 );
-Primary.args = {
+Default.args = {
     error: false,
     disabled: false,
     placeholder: "Placeholder"

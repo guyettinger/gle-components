@@ -33,13 +33,13 @@ const StoryTemplate = (args: InputFieldProps) => {
 };
 
 
-export const Primary: Story = (args: InputFieldProps) => (
+export const Default: Story = (args: InputFieldProps) => (
     <StoryTemplate {...args}/>
 );
-Primary.args = {
+Default.args = {
     error: false,
     disabled: false,
-    label: "Primary",
+    label: "Default",
     placeholder: "Placeholder"
 };
 
