@@ -14,11 +14,11 @@ const GLEComponentDarkTheme: GLEComponentTheme = {
             buttonRegularBackground: baseColors.grey.light4,
             buttonRegularBackgroundHover: baseColors.grey.light3,
             buttonRegularForeground: baseColors.black,
-            buttonRegularActiveBorderColor: baseColors.black,
+            buttonRegularActiveBorderColor: baseColors.white,
             buttonPrimaryBackground: baseColors.blue.light4,
             buttonPrimaryBackgroundHover: baseColors.blue.light3,
             buttonPrimaryForeground: baseColors.black,
-            buttonPrimaryActiveBorderColor: baseColors.black,
+            buttonPrimaryActiveBorderColor: baseColors.white,
 
 
             badgeBackground: baseColors.grey.dark4,
