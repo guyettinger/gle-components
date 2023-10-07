@@ -11,13 +11,13 @@ const GLEComponentDarkTheme: GLEComponentTheme = {
         },
         color: {
             ...GLEComponentLightTheme.gle.color,
-            buttonRegularBackground: baseColors.grey.light4,
+            buttonRegularBackground: baseColors.grey.light1,
             buttonRegularBackgroundHover: baseColors.grey.light3,
             buttonRegularForeground: baseColors.black,
-            buttonRegularActiveBorderColor: baseColors.white,
-            buttonPrimaryBackground: baseColors.blue.light4,
-            buttonPrimaryBackgroundHover: baseColors.blue.light3,
-            buttonPrimaryForeground: baseColors.black,
+            buttonRegularActiveBorderColor: baseColors.grey.light6,
+            buttonPrimaryBackground: baseColors.blue.dark1,
+            buttonPrimaryBackgroundHover: baseColors.blue.light1,
+            buttonPrimaryForeground: baseColors.grey.light6,
             buttonPrimaryActiveBorderColor: baseColors.white,
 
 
