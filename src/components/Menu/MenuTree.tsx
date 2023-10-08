@@ -70,7 +70,7 @@ const MenuContainer = styled.div`
 export const MenuTree = forwardRef<
     HTMLButtonElement,
     MenuProps & HTMLProps<HTMLButtonElement>
->(({children, label, ...props}, forwardedRef) => {
+>(({children, buttonContent, ...props}, forwardedRef) => {
     const [isOpen, setIsOpen] = useState(false);
     const [hasFocusInside, setHasFocusInside] = useState(false);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -176,7 +176,7 @@ export const MenuTree = forwardRef<
                                         }
                                     })
                                 )}>
-                    {label}
+                    {buttonContent}
                 </MenuRootButton>
             }
             {isNested &&
@@ -198,7 +198,7 @@ export const MenuTree = forwardRef<
                         })
                     )}
                 >
-                    {label}
+                    {buttonContent}
                     <span aria-hidden style={{marginLeft: 10, fontSize: 10}}>▶</span>
                 </MenuItemButton>
             }

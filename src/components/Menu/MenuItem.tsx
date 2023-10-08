@@ -36,9 +36,9 @@ const MenuItemButton = styled.button`
 export const MenuItem = forwardRef<
     HTMLButtonElement,
     MenuItemProps & ButtonHTMLAttributes<HTMLButtonElement>
->(({label, disabled, ...props}, forwardedRef) => {
+>(({name, children, disabled, ...props}, forwardedRef) => {
     const menu = useContext(MenuContext);
-    const item = useListItem({label: disabled ? null : label});
+    const item = useListItem({label: disabled ? null : name});
     const tree = useFloatingTree();
     const isActive = item.index === menu.activeIndex;
 
@@ -62,7 +62,7 @@ export const MenuItem = forwardRef<
                 }
             })}
         >
-            {label}
+            {children}
         </MenuItemButton>
     );
 });

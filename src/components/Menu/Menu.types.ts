@@ -1,12 +1,14 @@
 import { ReactNode } from "react";
 
 export interface MenuProps {
-    label: string;
+    name: string;
+    buttonContent: ReactNode;
     nested?: boolean;
     children?: ReactNode;
 }
 
 export interface MenuItemProps {
-    label: string;
+    name: string;
     disabled?: boolean;
+    children: ReactNode;
 }
