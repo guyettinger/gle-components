@@ -48,21 +48,23 @@ const BooleanEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentati
     }
 
     return (
-        <InputContainer onClick={handleClick}>
-            <RadioLabel className="radio">
+        <InputContainer className="gle-input-container gle-boolean-input-conatiner" onClick={handleClick}>
+            <RadioLabel className="gle-boolean-label radio">
                 true
                 <Input name="boolean"
                        type="radio"
+                       className="gle-boolean-input"
                        variant="small"
                        value="true"
                        checked={inputValue}
                        onKeyDown={handleKeyDown}
                        onChange={handleInputChange}/>
             </RadioLabel>
-            <RadioLabel className="radio">
+            <RadioLabel className="gle-boolean-label radio">
                 false
                 <Input name="boolean"
                        type="radio"
+                       className="gle-boolean-input"
                        variant="small"
                        value="false"
                        checked={!inputValue}

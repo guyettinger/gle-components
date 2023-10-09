@@ -82,16 +82,16 @@ const JsonNode = ({title, path, value}: JsonNodeViewProps) => {
     }
 
     return (
-        <JsonNodeContent onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <JsonNodeContent className="gle-node-content" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             {title &&
-                <JsonNodeTitleContainer>
+                <JsonNodeTitleContainer className="gle-node-title-container">
                     <JsonNodeTitle title={title} path={path}/>
                 </JsonNodeTitleContainer>
             }
-            <JsonNodeValueContainer>
+            <JsonNodeValueContainer className="gle-node-value-container">
                 <JsonNodeValue value={value} path={path}/>
                 {(!isRoot && (isMouseOver || isMenuOpen)) &&
-                    <JsonNodeActionContainer>
+                    <JsonNodeActionContainer className="gle-node-action-container">
                         <Menu name="JsonNodeMenu"
                               onOpenChange={handleMenuOpenChange}
                               buttonContent={

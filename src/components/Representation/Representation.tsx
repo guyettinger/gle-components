@@ -1,5 +1,15 @@
 import { useState } from "react";
+import styled from "styled-components";
 import { RepresentationProps, RepresentationTypes } from "./Representation.types";
+
+const RepresentationContainer = styled.span`
+`
+
+const RepresentationViewContainer = styled.span`
+`
+
+const RepresentationEditContainer = styled.span`
+`
 
 const Representation = <T extends unknown>
 (
@@ -49,18 +59,18 @@ const Representation = <T extends unknown>
     }
 
     return (
-        <span>
+        <RepresentationContainer className="gle-representation-container">
             {currentRepresentationType === RepresentationTypes.view &&
-                <span onClick={handleViewClick}>
+                <RepresentationViewContainer className="gle-representation-view-container" onClick={handleViewClick}>
                     <ViewRepresentation value={currentValue}/>
-                </span>
+                </RepresentationViewContainer>
             }
             {currentRepresentationType === RepresentationTypes.edit &&
-                <span onBlur={handleEditBlur}>
+                <RepresentationEditContainer className="gle-representation-edit-container" onBlur={handleEditBlur}>
                     <EditRepresentation value={currentValue} onSubmit={handleSubmit} onCancel={handleCancel}/>
-                </span>
+                </RepresentationEditContainer>
             }
-        </span>
+        </RepresentationContainer>
     )
 }
 

@@ -19,11 +19,11 @@ const JsonArrayNodeElements = styled.ul`
 
 const JsonArrayNode = ({value, path}: JsonArrayViewProps) => {
     return (
-        <JsonArrayContainer>
-            <JsonArrayHeader>
+        <JsonArrayContainer className="gle-array-container">
+            <JsonArrayHeader className="gle-array-header">
                 {'['}
             </JsonArrayHeader>
-            <JsonArrayNodeElements>
+            <JsonArrayNodeElements className="gle-array-elements">
                 {
                     value.map((arrayValue: JsonValue, arrayIndex: number) => {
                         return <JsonNode key={`${arrayIndex}:${JSON.stringify(arrayValue)}`}
@@ -33,7 +33,7 @@ const JsonArrayNode = ({value, path}: JsonArrayViewProps) => {
                     })
                 }
             </JsonArrayNodeElements>
-            <JsonArrayFooter>
+            <JsonArrayFooter className="gle-array-footer">
                 {']'}
             </JsonArrayFooter>
         </JsonArrayContainer>

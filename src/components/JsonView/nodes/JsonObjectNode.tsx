@@ -19,11 +19,11 @@ const JsonObjectNodeProperties = styled.ul`
 
 const JsonObjectNode = ({value, path}: JsonObjectViewProps) => {
     return (
-        <JsonObjectContainer>
-            <JsonObjectHeader>
+        <JsonObjectContainer className="gle-object-container">
+            <JsonObjectHeader className="gle-object-header">
                 {'{'}
             </JsonObjectHeader>
-            <JsonObjectNodeProperties>
+            <JsonObjectNodeProperties className="gle-object-properties">
                 {
                     Object.entries(value).map(([k, v]: [string, JsonValue]) => {
                         return <JsonNode key={k}
@@ -33,7 +33,7 @@ const JsonObjectNode = ({value, path}: JsonObjectViewProps) => {
                     })
                 }
             </JsonObjectNodeProperties>
-            <JsonObjectFooter>
+            <JsonObjectFooter className="gle-object-footer">
                 {'}'}
             </JsonObjectFooter>
         </JsonObjectContainer>

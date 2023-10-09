@@ -35,9 +35,10 @@ const StringEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentatio
     }
 
     return (
-        <InputContainer>
+        <InputContainer className="gle-string-input-container">
             <Input ref={inputRef as Ref<HTMLInputElement>}
                    type="text"
+                   className="gle-string-input"
                    variant="small"
                    value={inputValue}
                    onKeyDown={handleKeyDown}

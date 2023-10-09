@@ -35,9 +35,10 @@ const NumberEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentatio
     }
 
     return (
-        <InputContainer>
+        <InputContainer className="gle-number-input-container">
             <Input ref={inputRef as Ref<HTMLInputElement>}
                    type="number"
+                   className="gle-number-input"
                    variant="small"
                    value={inputValue}
                    onKeyDown={handleKeyDown}
