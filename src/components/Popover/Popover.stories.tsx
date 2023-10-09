@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { useState } from "react";
 import { Popover } from "./Popover";
 import { PopoverProps } from "./Popover.types";
 import { PopoverClose } from "./PopoverClose";
@@ -6,7 +7,6 @@ import { PopoverDescription } from "./PopoverDescription";
 import { PopoverHeading } from "./PopoverHeading";
 import { PopoverContent } from "./PopoverContent";
 import { PopoverTrigger } from "./PopoverTrigger";
-import { useState } from "react";
 
 const meta: Meta<typeof Popover> = {
     component: Popover,
