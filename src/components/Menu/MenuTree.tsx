@@ -70,26 +70,28 @@ const MenuContainer = styled.div`
 export const MenuTree = forwardRef<
     HTMLButtonElement,
     MenuProps & HTMLProps<HTMLButtonElement>
->(({children, buttonContent, ...props}, forwardedRef) => {
+>(({children, buttonContent, onOpenChange, ...props}, forwardedRef) => {
     const [isOpen, setIsOpen] = useState(false);
     const [hasFocusInside, setHasFocusInside] = useState(false);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
     const elementsRef = useRef<Array<HTMLButtonElement | null>>([]);
     const labelsRef = useRef<Array<string | null>>([]);
     const parent = useContext(MenuContext);
-
     const tree = useFloatingTree();
     const nodeId = useFloatingNodeId();
     const parentId = useFloatingParentNodeId();
     const item = useListItem();
-
     const isNested = parentId != null;
+
+    const handleOpenChange = (open: boolean, event?: Event) =>{
+        setIsOpen(open)
+        onOpenChange?.(open)
+    }
 
     const {floatingStyles, refs, context} = useFloating<HTMLButtonElement>({
         nodeId,
         open: isOpen,
-        onOpenChange: setIsOpen,
+        onOpenChange: handleOpenChange,
         placement: isNested ? "right-start" : "bottom-start",
         middleware: [
             offset({mainAxis: isNested ? 0 : 4, alignmentAxis: isNested ? -4 : 0}),
@@ -98,7 +100,6 @@ export const MenuTree = forwardRef<
         ],
         whileElementsMounted: autoUpdate
     });
-
     const hover = useHover(context, {
         enabled: isNested,
         delay: {open: 75},
@@ -122,7 +123,6 @@ export const MenuTree = forwardRef<
         onMatch: isOpen ? setActiveIndex : undefined,
         activeIndex
     });
-
     const {
         getReferenceProps,
         getFloatingProps,
@@ -164,6 +164,7 @@ export const MenuTree = forwardRef<
         <FloatingNode id={nodeId}>
             {!isNested &&
                 <MenuRootButton ref={useMergeRefs([refs.setReference, item.ref, forwardedRef])}
+                                className="gle-menu-root-button"
                                 data-open={isOpen ? "" : undefined}
                                 data-focus-inside={hasFocusInside ? "" : undefined}
                                 {...getReferenceProps(
@@ -182,6 +183,7 @@ export const MenuTree = forwardRef<
             {isNested &&
                 <MenuItemButton
                     ref={useMergeRefs([refs.setReference, item.ref, forwardedRef])}
+                    className="gle-menu-item-button"
                     tabIndex={parent.activeIndex === item.index ? 0 : -1}
                     role="menuitem"
                     data-open={isOpen ? "" : undefined}
@@ -224,6 +226,7 @@ export const MenuTree = forwardRef<
                                 <MenuContainer
                                     ref={refs.setFloating}
                                     style={floatingStyles}
+                                    className="gle-menu-container"
                                     {...getFloatingProps()}
                                 >
                                     {children}

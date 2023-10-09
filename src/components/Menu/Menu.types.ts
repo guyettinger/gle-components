@@ -5,6 +5,7 @@ export interface MenuProps {
     buttonContent: ReactNode;
     nested?: boolean;
     children?: ReactNode;
+    onOpenChange?: (open:boolean) => void
 }
 
 export interface MenuItemProps {

@@ -48,7 +48,7 @@ export const MenuItem = forwardRef<
             ref={useMergeRefs([item.ref, forwardedRef])}
             type="button"
             role="menuitem"
-            className="MenuItem"
+            className="gle-menu-item-button"
             tabIndex={isActive ? 0 : -1}
             disabled={disabled}
             {...menu.getItemProps({

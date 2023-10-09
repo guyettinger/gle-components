@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from "@storybook/react";
+import styled, { css } from "styled-components";
 import { MdMenu } from "react-icons/md";
 import { MdUndo } from "react-icons/md";
 import { MdRedo } from "react-icons/md";
 import { MdContentCut } from "react-icons/md";
 import { MdCopyAll } from "react-icons/md";
 import { MdShare } from "react-icons/md";
-import styled, { css } from "styled-components";
 import { Menu } from "./Menu";
 import { MenuItem } from "./MenuItem";
 import { MenuProps } from "./Menu.types";
@@ -26,7 +26,7 @@ const IconStyle = css`
 `
 
 const MenuIcon = styled(MdMenu)`
-    ${IconStyle}
+  ${IconStyle}
 `
 
 const UndoIcon = styled(MdUndo)`
@@ -72,5 +72,5 @@ export const Default: Story = (args: MenuProps) => (
     </Menu>
 );
 Default.args = {
-    label: "Primary"
+    name: "Default"
 };
