@@ -17,6 +17,7 @@ import styled from "styled-components";
 const MenuRootButton = styled.button`
   padding: 6px 14px;
   font-size: 16px;
+  color: inherit;
   background: none;
   border-radius: 6px;
   border: 1px solid #d7dce5;

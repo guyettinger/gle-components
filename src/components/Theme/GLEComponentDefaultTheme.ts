@@ -3,7 +3,7 @@ import GLEComponentLightTheme from "./GLEComponentLightTheme";
 
 const GLEComponentDefaultTheme: GLEComponentTheme = {
     gle: {
-        ...GLEComponentLightTheme.gleComponent
+        ...GLEComponentLightTheme.gle
     }
 };
 

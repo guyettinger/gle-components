@@ -10,7 +10,9 @@ export const color = {
     buttonPrimaryForeground: baseColors.white,
     buttonPrimaryActiveBorderColor: baseColors.blue.dark6,
 
+    screenForeground: baseColors.black,
     screenBackground: baseColors.white,
+
     white: baseColors.white,
     black: baseColors.black,
 }

@@ -4,7 +4,7 @@ import { baseColors, boxShadow } from "./Variables";
 
 const GLEComponentDarkTheme: GLEComponentTheme = {
     gle: {
-        ...GLEComponentLightTheme.gleComponent,
+        ...GLEComponentLightTheme.gle,
         boxShadow: {
             ...boxShadow,
             outerBorder: `0 0 0 2px ${baseColors.blue.dark5}, 0 0 0 4px ${baseColors.blue.base}`,
@@ -20,6 +20,7 @@ const GLEComponentDarkTheme: GLEComponentTheme = {
             buttonPrimaryForeground: baseColors.grey.light6,
             buttonPrimaryActiveBorderColor: baseColors.white,
 
+            screenForeground: baseColors.white,
             screenBackground: baseColors.grey.dark6,
         },
         name: 'dark',

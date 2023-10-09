@@ -18,7 +18,9 @@ const ThemeBlock = styled.div<{ left?: boolean; $fill?: boolean }>(
           bottom: 0;
           overflow: auto;
           padding: 1rem;
+          color: ${theme.gle.color.screenForeground};
           background: ${theme.gle.color.screenBackground};
+          font-family: ${theme.gle.fonts.family};
 
           ${breakpoints.S} {
             left: ${left ? 0 : '50vw'};
@@ -34,7 +36,7 @@ export const withGLEComponentTheme: Decorator = (StoryFn, context) => {
     const storyTheme = theme === 'dark' ? GLEComponentDarkTheme : GLEComponentLightTheme
     return (
         <GLEComponentThemeProvider theme={storyTheme}>
-            <ThemeBlock $fill={true}>
+            <ThemeBlock $fill={true} className="gle-theme-block">
                 <StoryFn/>
             </ThemeBlock>
         </GLEComponentThemeProvider>
