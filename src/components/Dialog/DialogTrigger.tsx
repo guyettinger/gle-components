@@ -33,5 +33,5 @@ export const DialogTrigger = forwardRef<
         >
             {children}
         </button>
-    );
-});
+    )
+})

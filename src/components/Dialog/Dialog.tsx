@@ -7,18 +7,10 @@ export const Dialog = (
         children,
         ...options
     }: {
-        children: ReactNode;
+        children: ReactNode
     } & DialogProps) => {
-    const dialog = useDialog(options);
+    const dialog = useDialog(options)
     return (
         <DialogContext.Provider value={dialog}>{children}</DialogContext.Provider>
-    );
+    )
 }
-
-
-
-
-
-
-
-
