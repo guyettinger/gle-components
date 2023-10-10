@@ -52,7 +52,6 @@ const MenuItemButton = styled(Button)`
 
 const MenuContainer = styled.div`
   background: ${props => props.theme.gle.color.menuContainerBackground };
-  opacity: 0.8;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 4px;
