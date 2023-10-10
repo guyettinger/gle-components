@@ -4,7 +4,7 @@ import BooleanRepresentation from "./BooleanRepresentation";
 
 const meta: Meta<typeof BooleanRepresentation> = {
     component: BooleanRepresentation,
-    title: "gle-components/Representation/BooleanRepresentation",
+    title: "gle-components/Representations/BooleanRepresentation",
     argTypes: {},
 };
 export default meta;

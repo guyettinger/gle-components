@@ -10,7 +10,7 @@ import { PopoverTrigger } from "./PopoverTrigger";
 
 const meta: Meta<typeof Popover> = {
     component: Popover,
-    title: "gle-components/Popover",
+    title: "gle-components/Floating/Popover",
     argTypes: {},
 };
 export default meta;

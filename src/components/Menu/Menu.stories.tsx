@@ -12,7 +12,7 @@ import { MenuProps } from "./Menu.types";
 
 const meta: Meta<typeof Menu> = {
     component: Menu,
-    title: "gle-components/Menu",
+    title: "gle-components/Floating/Menu",
     argTypes: {},
 };
 export default meta;

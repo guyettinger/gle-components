@@ -10,7 +10,7 @@ import { DialogTrigger } from "./DialogTrigger";
 
 const meta: Meta<typeof Dialog> = {
     component: Dialog,
-    title: "gle-components/Dialog",
+    title: "gle-components/Floating/Dialog",
     argTypes: {},
 };
 export default meta;

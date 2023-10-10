@@ -4,7 +4,7 @@ import NumberRepresentation from "./NumberRepresentation";
 
 const meta: Meta<typeof NumberRepresentation> = {
     component: NumberRepresentation,
-    title: "gle-components/Representation/NumberRepresentation",
+    title: "gle-components/Representations/NumberRepresentation",
     argTypes: {},
 };
 export default meta;

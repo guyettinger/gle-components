@@ -7,7 +7,7 @@ import { TooltipProps } from "./Tooltip.types";
 
 const meta: Meta<typeof Tooltip> = {
     component: Tooltip,
-    title: "gle-components/Tooltip",
+    title: "gle-components/Floating/Tooltip",
     argTypes: {},
 };
 export default meta;

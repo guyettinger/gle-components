@@ -4,7 +4,7 @@ import StringRepresentation from "./StringRepresentation";
 
 const meta: Meta<typeof StringRepresentation> = {
     component: StringRepresentation,
-    title: "gle-components/Representation/StringRepresentation",
+    title: "gle-components/Representations/StringRepresentation",
     argTypes: {},
 };
 export default meta;
