@@ -1,7 +1,12 @@
+import { forwardRef } from "react";
 import styled from "styled-components";
 import { ButtonProps } from "./Button.types";
 
-const StyledButton = styled.button<{ $primary?: boolean, $variant?: string, disabled?: boolean }>`
+const StyledButton = styled.button<{
+    $primary?: boolean,
+    $variant?: string,
+    disabled?: boolean
+}>`
   border: 0;
   line-height: 1;
   font-size: 15px;
@@ -35,16 +40,18 @@ const StyledButton = styled.button<{ $primary?: boolean, $variant?: string, disa
 `
 
 const Button =
-    ({
-         variant,
-         primary,
-         disabled,
-         onClick,
-         children,
-         ...props
-     }: ButtonProps) => {
+    forwardRef<HTMLButtonElement, ButtonProps>((
+        {
+            variant,
+            primary,
+            disabled,
+            onClick,
+            children,
+            ...props
+        }: ButtonProps, ref) => {
         return (
             <StyledButton
+                ref={ref}
                 type="button"
                 onClick={onClick}
                 disabled={disabled}
@@ -54,6 +61,6 @@ const Button =
                 {children}
             </StyledButton>
         )
-    }
+    })
 
 export default Button
