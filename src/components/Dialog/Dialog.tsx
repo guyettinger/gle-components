@@ -11,6 +11,8 @@ export const Dialog = (
     } & DialogProps) => {
     const dialog = useDialog(options)
     return (
-        <DialogContext.Provider value={dialog}>{children}</DialogContext.Provider>
+        <DialogContext.Provider value={dialog}>
+            {children}
+        </DialogContext.Provider>
     )
 }

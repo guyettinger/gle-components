@@ -10,9 +10,9 @@ import {
     useFloatingTree, useHover, useInteractions,
     useListItem, useListNavigation, useMergeRefs, useRole, useTypeahead
 } from "@floating-ui/react";
+import styled from "styled-components";
 import MenuContext from "./MenuContext";
 import { MenuProps } from "./Menu.types";
-import styled from "styled-components";
 
 const MenuRootButton = styled.button`
   padding: 6px 14px;

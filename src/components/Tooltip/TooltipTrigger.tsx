@@ -1,6 +1,6 @@
 import { cloneElement, forwardRef, HTMLProps, isValidElement } from "react";
-import { useTooltipContext } from "./TooltipContext";
 import { useMergeRefs } from "@floating-ui/react";
+import { useTooltipContext } from "./TooltipContext";
 
 export const TooltipTrigger = forwardRef<
     HTMLElement,
