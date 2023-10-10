@@ -2,7 +2,13 @@ import { forwardRef } from "react";
 import styled from "styled-components";
 import { InputProps } from "./Input.types";
 
-const StyledInput = styled.input<InputProps>`
+const StyledInput = styled.input<{
+    $primary?: boolean,
+    $variant?: string,
+    disabled?: boolean,
+    $error?: boolean,
+    $success?: boolean,
+}>`
   height: ${(props) =>
           props.$variant === "small"
                   ? "11px"
@@ -19,6 +25,7 @@ const StyledInput = styled.input<InputProps>`
                                   ? "#067d68"
                                   : "#353637"};
   background-color: #fff;
+
   &:focus {
     border: solid 2px #1b116e;
   }
