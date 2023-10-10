@@ -3,7 +3,8 @@ import { FloatingFocusManager, FloatingPortal, useMergeRefs } from "@floating-ui
 import styled from "styled-components";
 import { usePopoverContext } from "./PopoverContext";
 
-const PopoverContainer = styled.div`background-color: white;
+const PopoverContainer = styled.div`
+  background-color: white;
   box-shadow: 0 2px 4px rgba(0, 10, 20, 0.1);
   border: 1px solid #ddd;
   font-size: 90%;
