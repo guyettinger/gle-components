@@ -21,8 +21,8 @@ type Story = StoryObj<typeof Menu>;
 
 const IconStyle = css`
   vertical-align: text-top;
-  padding-right: 4px;
-  color: white;
+  padding-right: 8px;
+  color: inherit;
 `
 
 const MenuIcon = styled(MdMenu)`
