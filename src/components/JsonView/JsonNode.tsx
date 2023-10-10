@@ -27,12 +27,7 @@ const JsonNodeActionContainer = styled.span`
   .gle-menu-root-button {
     padding: 0;
     margin: 0;
-    background: none;
     font-size: 12px;
-    &[data-open],
-    &:hover {
-      background: #d7dce5;
-    }
   }
 `
 
@@ -81,6 +76,8 @@ const JsonNode = ({title, path, value}: JsonNodeViewProps) => {
         e.stopPropagation()
     }
 
+    const menuVariant = "small";
+
     return (
         <JsonNodeContent className="gle-node-content" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             {title &&
@@ -92,57 +89,82 @@ const JsonNode = ({title, path, value}: JsonNodeViewProps) => {
                 <JsonNodeValue value={value} path={path}/>
                 {(!isRoot && (isMouseOver || isMenuOpen)) &&
                     <JsonNodeActionContainer className="gle-node-action-container">
-                        <Menu name="JsonNodeMenu"
+                        <Menu variant={menuVariant} name="JsonNodeMenu"
                               onOpenChange={handleMenuOpenChange}
                               buttonContent={
                                   <span><MenuIcon/></span>
                               }>
                             <Menu name="InsertMenu"
+                                  variant={menuVariant}
                                   buttonContent={
                                       <span><AddIcon/>Insert</span>
                                   }>
                                 <Menu name="InsertBeforeMenu"
+                                      variant={menuVariant}
                                       buttonContent={
                                           <span>Before</span>
                                       }>
-                                    <MenuItem name="InsertBooleanBefore" onClick={handleAddClick}>
+                                    <MenuItem name="InsertBooleanBefore"
+                                              variant={menuVariant}
+                                              onClick={handleAddClick}>
                                         <span>Boolean</span>
                                     </MenuItem>
-                                    <MenuItem name="InsertNumberBefore" onClick={handleAddClick}>
+                                    <MenuItem name="InsertNumberBefore"
+                                              variant={menuVariant}
+                                              onClick={handleAddClick}>
                                         <span>Number</span>
                                     </MenuItem>
-                                    <MenuItem name="InsertStringBefore" onClick={handleAddClick}>
+                                    <MenuItem name="InsertStringBefore"
+                                              variant={menuVariant}
+                                              onClick={handleAddClick}>
                                         <span>String</span>
                                     </MenuItem>
-                                    <MenuItem name="InsertArrayBefore" onClick={handleAddClick}>
+                                    <MenuItem name="InsertArrayBefore"
+                                              variant={menuVariant}
+                                              onClick={handleAddClick}>
                                         <span>Array</span>
                                     </MenuItem>
-                                    <MenuItem name="InsertObjectBefore" onClick={handleAddClick}>
+                                    <MenuItem name="InsertObjectBefore"
+                                              variant={menuVariant}
+                                              onClick={handleAddClick}>
                                         <span>Object</span>
                                     </MenuItem>
                                 </Menu>
                                 <Menu name="InsertAfterMenu"
+                                      variant={menuVariant}
                                       buttonContent={
                                           <span>After</span>
                                       }>
-                                    <MenuItem name="InsertBooleanAfter" onClick={handleAddClick}>
+                                    <MenuItem name="InsertBooleanAfter"
+                                              variant={menuVariant}
+                                              onClick={handleAddClick}>
                                         <span>Boolean</span>
                                     </MenuItem>
-                                    <MenuItem name="InsertNumberAfter" onClick={handleAddClick}>
+                                    <MenuItem name="InsertNumberAfter"
+                                              variant={menuVariant}
+                                              onClick={handleAddClick}>
                                         <span>Number</span>
                                     </MenuItem>
-                                    <MenuItem name="InsertStringAfter" onClick={handleAddClick}>
+                                    <MenuItem name="InsertStringAfter"
+                                              variant={menuVariant}
+                                              onClick={handleAddClick}>
                                         <span>String</span>
                                     </MenuItem>
-                                    <MenuItem name="InsertArrayAfter" onClick={handleAddClick}>
+                                    <MenuItem name="InsertArrayAfter"
+                                              variant={menuVariant}
+                                              onClick={handleAddClick}>
                                         <span>Array</span>
                                     </MenuItem>
-                                    <MenuItem name="InsertObjectAfter" onClick={handleAddClick}>
+                                    <MenuItem name="InsertObjectAfter"
+                                              variant={menuVariant}
+                                              onClick={handleAddClick}>
                                         <span>Object</span>
                                     </MenuItem>
                                 </Menu>
                             </Menu>
-                            <MenuItem name="Remove" onClick={handleRemoveClick}>
+                            <MenuItem name="Remove"
+                                      variant={menuVariant}
+                                      onClick={handleRemoveClick}>
                                 <span><RemoveIcon/>Remove</span>
                             </MenuItem>
                         </Menu>
