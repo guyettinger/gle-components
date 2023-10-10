@@ -39,7 +39,7 @@ const JsonNodeActionContainer = styled.span`
 const IconStyle = css`
   vertical-align: text-top;
   padding: 0 4px;
-  color: cornflowerblue;
+  color: inherit;
 `
 
 const MenuIcon = styled(MdMoreHoriz)`
