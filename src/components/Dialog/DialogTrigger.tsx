@@ -2,6 +2,7 @@ import { cloneElement, forwardRef, HTMLProps, isValidElement } from "react";
 import { useMergeRefs } from "@floating-ui/react";
 import { DialogTriggerProps } from "./Dialog.types";
 import { useDialogContext } from "./DialogContext";
+import Button from "../Button/Button";
 
 export const DialogTrigger = forwardRef<
     HTMLElement,
@@ -25,13 +26,13 @@ export const DialogTrigger = forwardRef<
     }
 
     return (
-        <button
+        <Button
             ref={ref}
             // The user can style the trigger based on the state
             data-state={context.open ? "open" : "closed"}
             {...context.getReferenceProps(props)}
         >
             {children}
-        </button>
+        </Button>
     )
 })

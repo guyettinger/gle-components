@@ -1,10 +1,12 @@
 import { cloneElement, forwardRef, HTMLProps, isValidElement } from "react";
 import { useMergeRefs } from "@floating-ui/react";
 import { useTooltipContext } from "./TooltipContext";
+import Button from "../Button/Button";
+import { ButtonProps } from "../Button/Button.types";
 
 export const TooltipTrigger = forwardRef<
     HTMLElement,
-    HTMLProps<HTMLElement> & { asChild?: boolean }
+    HTMLProps<HTMLElement> & ButtonProps & { asChild?: boolean }
 >(({children, asChild = false, ...props}, propRef) => {
     const context = useTooltipContext()
     const childrenRef = (children as any).ref
@@ -24,13 +26,13 @@ export const TooltipTrigger = forwardRef<
     }
 
     return (
-        <button
+        <Button
             ref={ref}
             // The user can style the trigger based on the state
             data-state={context.open ? "open" : "closed"}
             {...context.getReferenceProps(props)}
         >
             {children}
-        </button>
+        </Button>
     )
 })

@@ -1,13 +1,15 @@
-import { ButtonHTMLAttributes, forwardRef } from "react";
+import { forwardRef } from "react";
 import { usePopoverContext } from "./PopoverContext";
+import Button from "../Button/Button";
+import { ButtonProps } from "../Button/Button.types";
 
 export const PopoverClose = forwardRef<
     HTMLButtonElement,
-    ButtonHTMLAttributes<HTMLButtonElement>
+    ButtonProps
 >((props, ref) => {
     const {setOpen} = usePopoverContext()
     return (
-        <button
+        <Button
             type="button"
             ref={ref}
             {...props}

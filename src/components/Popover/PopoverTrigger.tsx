@@ -2,10 +2,12 @@ import { cloneElement, forwardRef, HTMLProps, isValidElement } from "react";
 import { useMergeRefs } from "@floating-ui/react";
 import { PopoverTriggerProps } from "./Popover.types";
 import { usePopoverContext } from "./PopoverContext";
+import Button from "../Button/Button";
+import { ButtonProps } from "../Button/Button.types";
 
 export const PopoverTrigger = forwardRef<
     HTMLElement,
-    HTMLProps<HTMLElement> & PopoverTriggerProps
+    HTMLProps<HTMLElement> & PopoverTriggerProps & ButtonProps
 >(({children, asChild = false, ...props}, propRef) => {
     const context = usePopoverContext()
     const childrenRef = (children as any).ref
@@ -25,14 +27,13 @@ export const PopoverTrigger = forwardRef<
     }
 
     return (
-        <button
+        <Button
             ref={ref}
-            type="button"
             // The user can style the trigger based on the state
             data-state={context.open ? "open" : "closed"}
             {...context.getReferenceProps(props)}
         >
             {children}
-        </button>
+        </Button>
     )
 })

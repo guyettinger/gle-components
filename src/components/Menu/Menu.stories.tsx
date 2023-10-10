@@ -22,7 +22,7 @@ type Story = StoryObj<typeof Menu>;
 const IconStyle = css`
   vertical-align: text-top;
   padding-right: 4px;
-  color: cornflowerblue;
+  color: white;
 `
 
 const MenuIcon = styled(MdMenu)`

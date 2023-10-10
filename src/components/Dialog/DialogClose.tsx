@@ -1,12 +1,14 @@
-import { ButtonHTMLAttributes, forwardRef } from "react";
+import { forwardRef } from "react";
 import { useDialogContext } from "./DialogContext";
+import Button from "../Button/Button";
+import { ButtonProps } from "../Button/Button.types";
 
 export const DialogClose = forwardRef<
     HTMLButtonElement,
-    ButtonHTMLAttributes<HTMLButtonElement>
->((props, ref) => {
+    ButtonProps
+>((props:ButtonProps, ref) => {
     const {setOpen} = useDialogContext()
     return (
-        <button type="button" {...props} ref={ref} onClick={() => setOpen(false)}/>
+        <Button {...props} ref={ref} onClick={() => setOpen(false)}/>
     )
 })

@@ -1,4 +1,4 @@
-import { FocusEvent, forwardRef, HTMLProps, useContext, useEffect, useRef, useState } from "react";
+import { FocusEvent, forwardRef, useContext, useEffect, useRef, useState } from "react";
 import {
     autoUpdate,
     flip,
@@ -13,48 +13,40 @@ import {
 import styled from "styled-components";
 import MenuContext from "./MenuContext";
 import { MenuProps } from "./Menu.types";
+import { ButtonProps } from "../Button/Button.types";
+import Button from "../Button/Button";
 
-const MenuRootButton = styled.button`
-  padding: 6px 14px;
-  font-size: 16px;
-  color: inherit;
-  background: none;
-  border-radius: 6px;
-  border: 1px solid #d7dce5;
-
-  &[data-open],
-  &:hover {
-    background: #d7dce5;
+const MenuRootButton = styled(Button)`
+  &[data-open]{
+    background-color: ${(props) => (props.primary ? props.theme.gle.color.buttonPrimaryBackgroundHover : props.theme.gle.color.buttonBackgroundHover)};
   }
 `
 
-const MenuItemButton = styled.button`
+const MenuItemButton = styled(Button)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: none;
   width: 100%;
   border: none;
   border-radius: 4px;
   font-size: 16px;
   text-align: left;
-  line-height: 1.8;
   min-width: 110px;
-  margin: 0;
+  margin: 2px 0;
   outline: 0;
+  color: ${(props) => (props.primary ? props.theme.gle.color.buttonPrimaryForeground : props.theme.gle.color.buttonForeground)};
+  background: ${(props) => (props.primary ? props.theme.gle.color.buttonPrimaryBackground : props.theme.gle.color.buttonBackground)};
 
   &:focus {
-    background: royalblue;
-    color: white;
+    background: ${(props) => (props.primary ? props.theme.gle.color.buttonPrimaryBackgroundHover : props.theme.gle.color.buttonBackgroundHover)};
   }
 
   &[data-nested][data-open]:not([data-focus-inside]) {
-    background: royalblue;
-    color: white;
+    background: ${(props) => (props.primary ? props.theme.gle.color.buttonPrimaryBackgroundHover : props.theme.gle.color.buttonBackgroundHover)};
   }
 
   &[data-focus-inside][data-open] {
-    background: #d7dce5;
+    background: ${(props) => (props.primary ? props.theme.gle.color.buttonPrimaryBackgroundHover : props.theme.gle.color.buttonBackgroundHover)};
   }
 `
 
@@ -70,7 +62,7 @@ const MenuContainer = styled.div`
 
 export const MenuTree = forwardRef<
     HTMLButtonElement,
-    MenuProps & HTMLProps<HTMLButtonElement>
+    MenuProps & ButtonProps
 >(({children, buttonContent, onOpenChange, ...props}, forwardedRef) => {
     const [isOpen, setIsOpen] = useState(false);
     const [hasFocusInside, setHasFocusInside] = useState(false);
@@ -83,6 +75,7 @@ export const MenuTree = forwardRef<
     const parentId = useFloatingParentNodeId();
     const item = useListItem();
     const isNested = parentId != null;
+    const buttonProps: ButtonProps = props as ButtonProps;
 
     const handleOpenChange = (open: boolean, event?: Event) =>{
         setIsOpen(open)
@@ -168,6 +161,7 @@ export const MenuTree = forwardRef<
                                 className="gle-menu-root-button"
                                 data-open={isOpen ? "" : undefined}
                                 data-focus-inside={hasFocusInside ? "" : undefined}
+                                {...buttonProps}
                                 {...getReferenceProps(
                                     parent.getItemProps({
                                         ...props,
@@ -190,6 +184,7 @@ export const MenuTree = forwardRef<
                     data-open={isOpen ? "" : undefined}
                     data-nested=""
                     data-focus-inside={hasFocusInside ? "" : undefined}
+                    {...buttonProps}
                     {...getReferenceProps(
                         parent.getItemProps({
                             ...props,

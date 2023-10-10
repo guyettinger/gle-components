@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { ButtonProps } from "../Button/Button.types";
 
 export interface DialogProps {
     initialOpen?: boolean;
@@ -6,7 +7,7 @@ export interface DialogProps {
     onOpenChange?: (open: boolean) => void;
 }
 
-export interface DialogTriggerProps {
+export interface DialogTriggerProps extends ButtonProps {
     children: ReactNode;
     asChild?: boolean;
 }

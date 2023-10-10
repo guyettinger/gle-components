@@ -21,7 +21,7 @@ const StyledButton = styled.button<{
                           ? "9px 30px 11px"
                           : "14px 30px 16px"};
   color: ${(props) => (props.$primary ? props.theme.gle.color.buttonPrimaryForeground : props.theme.gle.color.buttonForeground)};
-  background-color: ${(props) => (props.$primary ? props.theme.gle.color.buttonPrimaryBackground : props.theme.gle.color.buttonBackground)};
+  background: ${(props) => (props.$primary ? props.theme.gle.color.buttonPrimaryBackground : props.theme.gle.color.buttonBackground)};
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
 
   &:hover {
