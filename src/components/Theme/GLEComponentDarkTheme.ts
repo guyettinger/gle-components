@@ -20,6 +20,8 @@ const GLEComponentDarkTheme: GLEComponentTheme = {
             buttonPrimaryForeground: baseColors.blue.light5,
             buttonPrimaryActiveBorderColor: baseColors.white,
 
+            menuContainerBackground: baseColors.grey.dark3,
+
             screenForeground: baseColors.white,
             screenBackground: baseColors.grey.dark6,
         },
