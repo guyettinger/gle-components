@@ -3,7 +3,10 @@ on:
   push:
     branches:
       - main # if any push happens on branch `main`, run this workflow. You could also add `paths` to detect changes in specific folder
-
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
