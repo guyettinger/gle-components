@@ -1,7 +1,0 @@
-export * from "./DialogContext"
-export * from "./Dialog"
-export * from "./DialogClose"
-export * from "./DialogContent"
-export * from "./DialogDescription"
-export * from "./DialogHeading"
-export * from "./DialogTrigger"
