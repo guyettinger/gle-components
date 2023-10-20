@@ -1,5 +1,5 @@
 # GLE Components
 A basic component library.
 
-# Documentation
+## Documentation
 [Storybook](https://guyettinger.github.io/gle-components/)
