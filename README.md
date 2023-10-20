@@ -1,2 +1,5 @@
 # GLE Components
-[Storybook Examples](https://guyettinger.github.io/gle-components/)
+GLE Component Library
+
+# Documentation
+[Storybook](https://guyettinger.github.io/gle-components/)
