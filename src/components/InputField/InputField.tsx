@@ -6,7 +6,10 @@ import Input from "../Input/Input";
 const StyledInput = styled(Input)`
 `
 
-const StyledLabel = styled.div`
+const StyledLabel = styled.div<{
+    $variant?: string,
+    disabled?: boolean
+}>`
   font-size: 14px;
   color: ${(props) => (props.disabled ? "#e4e3ea" : "#080808")};
   padding-bottom: ${(props) =>
@@ -17,7 +20,9 @@ const StyledLabel = styled.div`
                           : "6px"};;
 `
 
-const StyledMessage = styled.div`
+const StyledMessage = styled.div<{
+    $variant?: string
+}>`
   font-size: 14px;
   color: #a9150b;
   padding-top: ${(props) =>
@@ -28,7 +33,10 @@ const StyledMessage = styled.div`
                           : "4px"};
 `
 
-const StyledText = styled.p`
+const StyledText = styled.p<{
+    disabled?: boolean,
+    $error?: boolean,
+}>`
   margin: 0;
   color: ${(props) =>
           props.disabled ? "#e4e3ea" : props.$error ? "#a9150b" : "#080808"};
