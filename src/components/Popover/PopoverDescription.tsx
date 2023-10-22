@@ -2,7 +2,6 @@ import { forwardRef, HTMLProps, useLayoutEffect } from "react";
 import { useId } from "@floating-ui/react";
 import { usePopoverContext } from "./PopoverContext";
 
-
 export const PopoverDescription = forwardRef<
     HTMLParagraphElement,
     HTMLProps<HTMLParagraphElement>

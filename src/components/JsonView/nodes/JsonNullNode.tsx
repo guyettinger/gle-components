@@ -1,11 +1,9 @@
-import { JsonNullViewProps } from "../JsonView.types";
 import styled from "styled-components";
+import { JsonNullViewProps } from "../JsonView.types";
 
 const NullValue = styled.span`
 `
 
-const JsonNullNode = ({path}: JsonNullViewProps) => {
+export const JsonNullNode = ({path}: JsonNullViewProps) => {
     return (<NullValue className="gle-null-value">null</NullValue>)
 }
-
-export default JsonNullNode;

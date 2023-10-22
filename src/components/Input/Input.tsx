@@ -31,7 +31,7 @@ const StyledInput = styled.input<{
   }
 `
 
-const Input =
+export const Input =
     forwardRef<HTMLInputElement, InputProps>((
         {
             id,
@@ -58,5 +58,3 @@ const Input =
             </StyledInput>
         )
     })
-
-export default Input

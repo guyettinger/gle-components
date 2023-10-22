@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import { FloatingTree, useFloatingParentNodeId } from "@floating-ui/react";
 import { MenuProps } from "./Menu.types";
 import { MenuTree } from "./MenuTree";
-import { ButtonProps } from "../Button/Button.types";
+import { ButtonProps } from "../Button";
 
 export const Menu = forwardRef<
     HTMLButtonElement,

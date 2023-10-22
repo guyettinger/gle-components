@@ -1,6 +1,6 @@
-import { ChangeEvent, Ref, useEffect, useRef, useState } from "react";
-import Input from "../../Input/Input";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import { Input } from "../../Input";
 import { EditRepresentationProps } from "../Representation.types";
 
 const InputContainer = styled.span`
@@ -14,7 +14,7 @@ const RadioLabel = styled.label`
   align-items: center;
 `
 
-const BooleanEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentationProps<boolean>) => {
+export const BooleanEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentationProps<boolean>) => {
     const [inputValue, setInputValue] = useState<boolean>(value)
     const inputRef = useRef<HTMLInputElement>()
 
@@ -32,7 +32,7 @@ const BooleanEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentati
 
     const handleKeyDown = (e: any) => {
         const {key} = e;
-        const submitKeys = [ "Enter"]
+        const submitKeys = ["Enter"]
         if (submitKeys.indexOf(key) > -1) {
             onSubmit(inputValue)
         }
@@ -74,5 +74,3 @@ const BooleanEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentati
         </InputContainer>
     )
 }
-
-export default BooleanEditRepresentation

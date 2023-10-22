@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Button from "./Button";
+import { Button } from "./Button";
 import { ButtonProps } from "./Button.types";
 
 const meta: Meta<typeof Button> = {
@@ -48,7 +48,7 @@ const StoryTemplate = (args: ButtonProps) => {
     )
 };
 
-export const Default: Story = (args:ButtonProps) => (
+export const Default: Story = (args: ButtonProps) => (
     <StoryTemplate {...args}/>
 );
 Default.args = {
@@ -56,7 +56,7 @@ Default.args = {
     children: "Default",
 };
 
-export const Primary: Story = (args:ButtonProps) => (
+export const Primary: Story = (args: ButtonProps) => (
     <StoryTemplate {...args}/>
 );
 Primary.args = {

@@ -1,7 +1,7 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
-import dts from "rollup-plugin-dts";
+import { dts } from "rollup-plugin-dts";
 import terser from "@rollup/plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
@@ -15,6 +15,8 @@ export default [
                 file: packageJson.main,
                 format: "cjs",
                 sourcemap: true,
+                interop: "auto",
+                name: "gle-components"
             },
             {
                 file: packageJson.module,
@@ -26,14 +28,14 @@ export default [
             peerDepsExternal(),
             resolve(),
             commonjs(),
-            typescript({ tsconfig: "./tsconfig.json" }),
+            typescript({tsconfig: "./tsconfig.json"}),
             terser(),
         ],
         external: ["react", "react-dom", "styled-components"],
     },
     {
         input: "src/index.ts",
-        output: [{ file: "dist/types.d.ts", format: "es" }],
-        plugins: [dts.default()],
+        output: [{file: "dist/types.d.ts", format: "esm"}],
+        plugins: [dts()],
     },
 ];

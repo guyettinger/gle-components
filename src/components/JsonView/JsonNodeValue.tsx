@@ -7,15 +7,15 @@ import {
     isJsonString,
     JsonNodeValueViewProps
 } from "./JsonView.types";
-import JsonStringNode from "./nodes/JsonStringNode";
-import JsonNumberNode from "./nodes/JsonNumberNode";
-import JsonBooleanNode from "./nodes/JsonBooleanNode";
-import JsonObjectNode from "./nodes/JsonObjectNode";
-import JsonArrayNode from "./nodes/JsonArrayNode";
-import JsonNullNode from "./nodes/JsonNullNode";
-import JsonUnknownNode from "./nodes/JsonUnknownNode";
+import { JsonStringNode } from "./nodes";
+import { JsonNumberNode } from "./nodes";
+import { JsonBooleanNode } from "./nodes";
+import { JsonObjectNode } from "./nodes";
+import { JsonArrayNode } from "./nodes";
+import { JsonNullNode } from "./nodes";
+import { JsonUnknownNode } from "./nodes";
 
-const JsonNodeValue = ({value, path}: JsonNodeValueViewProps) => {
+export const JsonNodeValue = ({value, path}: JsonNodeValueViewProps) => {
 
     if (isJsonNull(value)) {
         return <JsonNullNode path={path}/>
@@ -33,4 +33,3 @@ const JsonNodeValue = ({value, path}: JsonNodeValueViewProps) => {
         return <JsonUnknownNode path={path}/>
     }
 }
-export default JsonNodeValue;

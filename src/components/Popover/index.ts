@@ -1,7 +1,12 @@
-export * from "./PopoverContext"
-export * from "./PopoverClose"
-export * from "./PopoverContent"
-export * from "./PopoverDescription"
-export * from "./PopoverHeading"
-export * from "./PopoverTrigger"
-export * from "./Popover"
+export { type PopoverProps, type PopoverTriggerProps } from "./Popover.types"
+export {
+    PopoverContext,
+    usePopover,
+    usePopoverContext
+} from "./PopoverContext"
+export { PopoverClose } from "./PopoverClose"
+export { PopoverContent } from "./PopoverContent"
+export { PopoverDescription } from "./PopoverDescription"
+export { PopoverHeading } from "./PopoverHeading"
+export { PopoverTrigger } from "./PopoverTrigger"
+export { Popover } from "./Popover"

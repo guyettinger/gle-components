@@ -1,8 +1,8 @@
 import { JsonNumberViewProps } from "../JsonView.types";
-import NumberRepresentation from "../../Representation/NumberRepresentation/NumberRepresentation";
+import { NumberRepresentation } from "../../Representation";
 import { useJsonViewApiContext } from "../JsonViewContext";
 
-const JsonNumberNode = ({value, path}: JsonNumberViewProps) => {
+export const JsonNumberNode = ({value, path}: JsonNumberViewProps) => {
     const api = useJsonViewApiContext()
     const handleSubmit = (newValue: number) => {
         api.update(path, newValue)
@@ -11,5 +11,3 @@ const JsonNumberNode = ({value, path}: JsonNumberViewProps) => {
 
     return (<NumberRepresentation value={value} onSubmit={handleSubmit}/>)
 }
-
-export default JsonNumberNode;

@@ -1,2 +1,2 @@
-export * from "./GLEComponentThemeStorybookDecorator"
-export * from "./GLEComponentThemeStorybookSwitcher"
+export { withGLEComponentTheme } from "./GLEComponentThemeStorybookDecorator"
+export { GLEComponentThemeStorybookSwitcher } from "./GLEComponentThemeStorybookSwitcher"

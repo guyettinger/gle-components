@@ -1,6 +1,6 @@
 import { createContext, Dispatch, HTMLProps, SetStateAction } from "react";
 
-const MenuContext = createContext<{
+export const MenuContext = createContext<{
     getItemProps: (userProps?: HTMLProps<HTMLElement>) => Record<string, unknown>
     activeIndex: number | null
     setActiveIndex: Dispatch<SetStateAction<number | null>>
@@ -15,6 +15,4 @@ const MenuContext = createContext<{
     setHasFocusInside: () => {
     },
     isOpen: false
-});
-
-export default MenuContext
+})

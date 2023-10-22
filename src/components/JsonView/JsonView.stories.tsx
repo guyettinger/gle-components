@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import JsonView from "./JsonView";
+import { JsonView } from "./JsonView";
 import { JsonViewProps } from "./JsonView.types";
 
 const meta: Meta<typeof JsonView> = {
@@ -11,7 +11,7 @@ export default meta;
 
 type Story = StoryObj<typeof JsonView>;
 
-export const Default: Story = (args:JsonViewProps) => (
+export const Default: Story = (args: JsonViewProps) => (
     <JsonView data-testid="JsonView-id" {...args} />
 );
 Default.args = {

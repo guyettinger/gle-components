@@ -1,7 +1,6 @@
 import { forwardRef } from "react";
 import { usePopoverContext } from "./PopoverContext";
-import Button from "../Button/Button";
-import { ButtonProps } from "../Button/Button.types";
+import { Button, ButtonProps } from "../Button";
 
 export const PopoverClose = forwardRef<
     HTMLButtonElement,

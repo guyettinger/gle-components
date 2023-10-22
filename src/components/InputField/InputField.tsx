@@ -1,7 +1,7 @@
 import { forwardRef, Fragment } from "react";
 import styled from "styled-components";
 import { InputFieldProps } from "./InputField.types";
-import Input from "../Input/Input";
+import { Input } from "../Input";
 
 const StyledInput = styled(Input)`
 `
@@ -42,7 +42,7 @@ const StyledText = styled.p<{
           props.disabled ? "#e4e3ea" : props.$error ? "#a9150b" : "#080808"};
 `
 
-const InputField =
+export const InputField =
     forwardRef<HTMLInputElement, InputFieldProps>((
         {
             id,
@@ -81,5 +81,3 @@ const InputField =
             </Fragment>
         )
     })
-
-export default InputField

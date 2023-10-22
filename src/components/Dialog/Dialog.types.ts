@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ButtonProps } from "../Button/Button.types";
+import { ButtonProps } from "../Button";
 
 export interface DialogProps {
     initialOpen?: boolean;

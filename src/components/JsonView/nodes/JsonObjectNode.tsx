@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { JsonObjectViewProps, JsonValue } from "../JsonView.types";
-import JsonNode from "../JsonNode";
+import { JsonNode } from "../JsonNode";
 
 const JsonObjectContainer = styled.span`
 `
@@ -17,7 +17,7 @@ const JsonObjectNodeProperties = styled.ul`
   padding-right: 0;
 `
 
-const JsonObjectNode = ({value, path}: JsonObjectViewProps) => {
+export const JsonObjectNode = ({value, path}: JsonObjectViewProps) => {
     return (
         <JsonObjectContainer className="gle-object-container">
             <JsonObjectHeader className="gle-object-header">
@@ -39,5 +39,3 @@ const JsonObjectNode = ({value, path}: JsonObjectViewProps) => {
         </JsonObjectContainer>
     )
 }
-
-export default JsonObjectNode;

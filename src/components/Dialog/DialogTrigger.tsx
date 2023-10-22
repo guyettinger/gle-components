@@ -2,7 +2,7 @@ import { cloneElement, forwardRef, HTMLProps, isValidElement } from "react";
 import { useMergeRefs } from "@floating-ui/react";
 import { DialogTriggerProps } from "./Dialog.types";
 import { useDialogContext } from "./DialogContext";
-import Button from "../Button/Button";
+import { Button } from "../Button";
 
 export const DialogTrigger = forwardRef<
     HTMLElement,

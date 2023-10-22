@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { useArgs } from "@storybook/preview-api";
-import NumberRepresentation from "./NumberRepresentation";
+import { NumberRepresentation } from "./NumberRepresentation";
 
 const meta: Meta<typeof NumberRepresentation> = {
     component: NumberRepresentation,
@@ -25,7 +25,7 @@ export const Number: Story = (args: any) => {
 }
 Number.args = {
     value: 3.14,
-    onSubmit: (value:number) => {
+    onSubmit: (value: number) => {
         console.log('onValueChanged', value)
     }
 };

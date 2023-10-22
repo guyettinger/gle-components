@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { JsonTreeViewProps, JsonValue } from "./JsonView.types";
 import { useJsonViewContext } from "./JsonViewContext";
-import JsonNode from "./JsonNode";
+import { JsonNode } from "./JsonNode";
 
 const StyledUl = styled.ul`
   list-style-type: none;
@@ -9,7 +9,7 @@ const StyledUl = styled.ul`
   padding-right:0;
 `
 
-const JsonTree = ({title}: JsonTreeViewProps) => {
+export const JsonTree = ({title}: JsonTreeViewProps) => {
     const path: string = ""
     const json: JsonValue = useJsonViewContext()
     return (
@@ -18,4 +18,3 @@ const JsonTree = ({title}: JsonTreeViewProps) => {
         </StyledUl>
     )
 }
-export default JsonTree;

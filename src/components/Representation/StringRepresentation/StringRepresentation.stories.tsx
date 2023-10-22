@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { useArgs } from "@storybook/preview-api";
-import StringRepresentation from "./StringRepresentation";
+import { StringRepresentation } from "./StringRepresentation";
 
 const meta: Meta<typeof StringRepresentation> = {
     component: StringRepresentation,
@@ -25,7 +25,7 @@ export const String: Story = (args: any) => {
 }
 String.args = {
     value: 'Editable String',
-    onSubmit: (value:string) => {
+    onSubmit: (value: string) => {
         console.log('onValueChanged', value)
     }
 };

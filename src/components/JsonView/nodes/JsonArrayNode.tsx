@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { JsonArrayViewProps, JsonValue } from "../JsonView.types";
-import JsonNode from "../JsonNode";
+import { JsonNode } from "../JsonNode";
 
 const JsonArrayContainer = styled.span`
 `
@@ -17,7 +17,7 @@ const JsonArrayNodeElements = styled.ul`
   padding-right: 0;
 `
 
-const JsonArrayNode = ({value, path}: JsonArrayViewProps) => {
+export const JsonArrayNode = ({value, path}: JsonArrayViewProps) => {
     return (
         <JsonArrayContainer className="gle-array-container">
             <JsonArrayHeader className="gle-array-header">
@@ -39,5 +39,3 @@ const JsonArrayNode = ({value, path}: JsonArrayViewProps) => {
         </JsonArrayContainer>
     )
 }
-
-export default JsonArrayNode;

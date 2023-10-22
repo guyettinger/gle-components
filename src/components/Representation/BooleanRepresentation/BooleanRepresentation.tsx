@@ -1,9 +1,9 @@
-import Representation from "../Representation";
-import BooleanViewRepresentation from "./BooleanViewRepresentation";
-import BooleanEditRepresentation from "./BooleanEditRepresentation";
+import { Representation } from "../Representation";
+import { BooleanViewRepresentation } from "./BooleanViewRepresentation";
+import { BooleanEditRepresentation } from "./BooleanEditRepresentation";
 import { BooleanRepresentationProps } from "./BooleanRepresentation.types";
 
-const BooleanRepresentation = ({value, onSubmit}: BooleanRepresentationProps) => {
+export const BooleanRepresentation = ({value, onSubmit}: BooleanRepresentationProps) => {
     return (
         <Representation value={value}
                         onSubmit={onSubmit}
@@ -12,5 +12,3 @@ const BooleanRepresentation = ({value, onSubmit}: BooleanRepresentationProps) =>
         />
     )
 }
-
-export default BooleanRepresentation

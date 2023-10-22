@@ -1,10 +1,9 @@
 import { forwardRef, MouseEvent, FocusEvent, useContext } from "react";
 import { useFloatingTree, useListItem, useMergeRefs } from "@floating-ui/react";
 import styled from "styled-components";
-import MenuContext from "./MenuContext";
+import { MenuContext } from "./MenuContext";
 import { MenuItemProps } from "./Menu.types";
-import Button from "../Button/Button";
-import { ButtonProps } from "../Button/Button.types";
+import { Button, ButtonProps } from "../Button";
 
 const MenuItemButton = styled(Button)`
   display: flex;
@@ -21,15 +20,15 @@ const MenuItemButton = styled(Button)`
 
   color: ${(props) => (props.primary ? props.theme.gle.color.buttonPrimaryForeground : props.theme.gle.color.buttonForeground)};
   background: ${(props) => (props.primary ? props.theme.gle.color.buttonPrimaryBackground : props.theme.gle.color.buttonBackground)};
-  
+
   &:focus {
     background: ${(props) => (props.primary ? props.theme.gle.color.buttonPrimaryBackgroundHover : props.theme.gle.color.buttonBackgroundHover)};
   }
-  
+
   &[data-nested][data-open]:not([data-focus-inside]) {
     background: ${(props) => (props.primary ? props.theme.gle.color.buttonPrimaryBackgroundHover : props.theme.gle.color.buttonBackgroundHover)};
   }
-  
+
   &[data-focus-inside][data-open] {
     background: ${(props) => (props.primary ? props.theme.gle.color.buttonPrimaryBackgroundHover : props.theme.gle.color.buttonBackgroundHover)};
   }
@@ -64,5 +63,5 @@ export const MenuItem = forwardRef<
         >
             {children}
         </MenuItemButton>
-    );
-});
+    )
+})

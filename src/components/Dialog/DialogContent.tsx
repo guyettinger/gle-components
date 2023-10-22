@@ -9,9 +9,9 @@ const DialogOverlay = styled(FloatingOverlay)`
   place-items: center;
 `
 
-const DialogContainer = styled.div`background-color: white;
-  margin: 15px;
+const DialogContainer = styled.div`
   background-color: white;
+  margin: 15px;
   padding: 15px;
   border-radius: 4px;
 `

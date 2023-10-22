@@ -1,13 +1,13 @@
 import { ChangeEvent, Ref, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import Input from "../../Input/Input";
+import { Input } from "../../Input";
 import { EditRepresentationProps } from "../Representation.types";
 
 const InputContainer = styled.span`
   display: inline-flex;
 `
 
-const StringEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentationProps<string>) => {
+export const StringEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentationProps<string>) => {
     const [inputValue, setInputValue] = useState<string>(value)
     const inputRef = useRef<HTMLInputElement>()
 
@@ -17,13 +17,13 @@ const StringEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentatio
         }
     }, [inputRef]);
 
-    const handleInputChange = (e:ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value)
     }
 
     const handleKeyDown = (e: any) => {
         const {key} = e;
-        const submitKeys = [ "Enter"]
+        const submitKeys = ["Enter"]
         if (submitKeys.indexOf(key) > -1) {
             onSubmit(inputValue)
         }
@@ -46,5 +46,3 @@ const StringEditRepresentation = ({value, onSubmit, onCancel}: EditRepresentatio
         </InputContainer>
     )
 }
-
-export default StringEditRepresentation

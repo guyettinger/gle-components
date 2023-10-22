@@ -1,8 +1,8 @@
 import { Decorator } from '@storybook/react'
 import styled, { css } from "styled-components";
-import GLEComponentThemeProvider from "../GLEComponentThemeProvider";
-import GLEComponentLightTheme from "../GLEComponentLightTheme";
-import GLEComponentDarkTheme from "../GLEComponentDarkTheme";
+import { GLEComponentThemeProvider } from "../GLEComponentThemeProvider";
+import { GLEComponentLightTheme } from "../GLEComponentLightTheme";
+import { GLEComponentDarkTheme } from "../GLEComponentDarkTheme";
 import { breakpoints } from "../Variables";
 
 const ThemeBlock = styled.div<{ left?: boolean; $fill?: boolean }>(

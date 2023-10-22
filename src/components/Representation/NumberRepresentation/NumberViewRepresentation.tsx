@@ -5,10 +5,8 @@ const NumberValue = styled.span`
 `
 
 
-const NumberViewRepresentation = ({value}: ViewRepresentationProps<number>) => {
+export const NumberViewRepresentation = ({value}: ViewRepresentationProps<number>) => {
     return (
         <NumberValue className="gle-number-value">{value.toString()}</NumberValue>
     )
 }
-
-export default NumberViewRepresentation

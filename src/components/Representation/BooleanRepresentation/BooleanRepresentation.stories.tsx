@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { useArgs } from "@storybook/preview-api";
-import BooleanRepresentation from "./BooleanRepresentation";
+import { BooleanRepresentation } from "./BooleanRepresentation";
 
 const meta: Meta<typeof BooleanRepresentation> = {
     component: BooleanRepresentation,
@@ -25,7 +25,7 @@ export const Boolean: Story = (args: any) => {
 }
 Boolean.args = {
     value: true,
-    onSubmit: (value:boolean) => {
+    onSubmit: (value: boolean) => {
         console.log('onValueChanged', value)
     }
 };

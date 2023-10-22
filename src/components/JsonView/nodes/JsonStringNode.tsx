@@ -1,8 +1,8 @@
 import { JsonStringViewProps } from "../JsonView.types";
-import StringRepresentation from "../../Representation/StringRepresentation/StringRepresentation";
+import { StringRepresentation } from "../../Representation";
 import { useJsonViewApiContext } from "../JsonViewContext";
 
-const JsonStringNode = ({value, path}: JsonStringViewProps) => {
+export const JsonStringNode = ({value, path}: JsonStringViewProps) => {
     const api = useJsonViewApiContext()
     const handleSubmit = (newValue: string) => {
         api.update(path, newValue)
@@ -10,5 +10,3 @@ const JsonStringNode = ({value, path}: JsonStringViewProps) => {
 
     return (<StringRepresentation value={value} onSubmit={handleSubmit}/>)
 }
-
-export default JsonStringNode;

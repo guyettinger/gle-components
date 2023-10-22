@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import { TooltipProps } from "./Tooltip.types";
 import { TooltipContext, useTooltip } from "./TooltipContext";
 
-
 export const Tooltip = ({
                             children,
                             ...options

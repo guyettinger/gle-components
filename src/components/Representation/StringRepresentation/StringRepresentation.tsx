@@ -1,9 +1,9 @@
-import Representation from "../Representation";
-import StringViewRepresentation from "./StringViewRepresentation";
-import StringEditRepresentation from "./StringEditRepresentation";
+import { Representation } from "../Representation";
+import { StringViewRepresentation } from "./StringViewRepresentation";
+import { StringEditRepresentation } from "./StringEditRepresentation";
 import { StringRepresentationProps } from "./StringRepresentation.types";
 
-const StringRepresentation = ({value, onSubmit}: StringRepresentationProps) => {
+export const StringRepresentation = ({value, onSubmit}: StringRepresentationProps) => {
     return (
         <Representation value={value}
                         onSubmit={onSubmit}
@@ -12,5 +12,3 @@ const StringRepresentation = ({value, onSubmit}: StringRepresentationProps) => {
         />
     )
 }
-
-export default StringRepresentation

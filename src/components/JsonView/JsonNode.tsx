@@ -5,8 +5,8 @@ import { MdAddCircleOutline } from "react-icons/md";
 import { MdRemoveCircleOutline } from "react-icons/md";
 import { JsonNodeViewProps } from "./JsonView.types";
 import { useJsonViewApiContext } from "./JsonViewContext";
-import JsonNodeTitle from "./JsonNodeTitle";
-import JsonNodeValue from "./JsonNodeValue"
+import { JsonNodeTitle } from "./JsonNodeTitle";
+import { JsonNodeValue } from "./JsonNodeValue"
 import { Menu, MenuItem } from "../Menu";
 
 const JsonNodeContent = styled.li`
@@ -23,7 +23,7 @@ const JsonNodeActionContainer = styled.span`
   position: absolute;
   vertical-align: middle;
   padding-left: 4px;
-  
+
   .gle-menu-root-button {
     padding: 0;
     margin: 0;
@@ -49,7 +49,7 @@ const AddIcon = styled(MdAddCircleOutline)`
   ${IconStyle}
 `
 
-const JsonNode = ({title, path, value}: JsonNodeViewProps) => {
+export const JsonNode = ({title, path, value}: JsonNodeViewProps) => {
     const [isMouseOver, setIsMouseOver] = useState<boolean>(false)
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
     const api = useJsonViewApiContext()
@@ -174,4 +174,3 @@ const JsonNode = ({title, path, value}: JsonNodeViewProps) => {
         </JsonNodeContent>
     )
 }
-export default JsonNode;

@@ -11,7 +11,7 @@ const RepresentationViewContainer = styled.span`
 const RepresentationEditContainer = styled.span`
 `
 
-const Representation = <T extends unknown>
+export const Representation = <T extends unknown>
 (
     {
         value,
@@ -73,5 +73,3 @@ const Representation = <T extends unknown>
         </RepresentationContainer>
     )
 }
-
-export default Representation

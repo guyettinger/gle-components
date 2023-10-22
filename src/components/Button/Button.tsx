@@ -44,7 +44,7 @@ const StyledButton = styled.button<{
   }
 `
 
-const Button =
+export const Button =
     forwardRef<HTMLButtonElement, ButtonProps>((
         {
             variant,
@@ -67,5 +67,3 @@ const Button =
             </StyledButton>
         )
     })
-
-export default Button

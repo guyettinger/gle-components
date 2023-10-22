@@ -1,8 +1,8 @@
 import { JsonBooleanViewProps } from "../JsonView.types";
-import BooleanRepresentation from "../../Representation/BooleanRepresentation/BooleanRepresentation";
+import { BooleanRepresentation } from "../../Representation";
 import { useJsonViewApiContext } from "../JsonViewContext";
 
-const JsonBooleanNode = ({value, path}: JsonBooleanViewProps) => {
+export const JsonBooleanNode = ({value, path}: JsonBooleanViewProps) => {
     const api = useJsonViewApiContext()
     const handleSubmit = (newValue: boolean) => {
         api.update(path, newValue)
@@ -10,5 +10,3 @@ const JsonBooleanNode = ({value, path}: JsonBooleanViewProps) => {
 
     return (<BooleanRepresentation value={value} onSubmit={handleSubmit}/>)
 }
-
-export default JsonBooleanNode;

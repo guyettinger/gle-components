@@ -11,13 +11,12 @@ import {
     useListItem, useListNavigation, useMergeRefs, useRole, useTypeahead
 } from "@floating-ui/react";
 import styled from "styled-components";
-import MenuContext from "./MenuContext";
+import { MenuContext } from "./MenuContext";
 import { MenuProps } from "./Menu.types";
-import { ButtonProps } from "../Button/Button.types";
-import Button from "../Button/Button";
+import { Button, ButtonProps } from "../Button";
 
 const MenuRootButton = styled(Button)`
-  &[data-open]{
+  &[data-open] {
     background-color: ${(props) => (props.primary ? props.theme.gle.color.buttonPrimaryBackgroundHover : props.theme.gle.color.buttonBackgroundHover)};
   }
 `
@@ -51,7 +50,7 @@ const MenuItemButton = styled(Button)`
 `
 
 const MenuContainer = styled.div`
-  background: ${props => props.theme.gle.color.menuContainerBackground };
+  background: ${props => props.theme.gle.color.menuContainerBackground};
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 4px;
@@ -77,7 +76,7 @@ export const MenuTree = forwardRef<
     const isNested = parentId != null;
     const buttonProps: ButtonProps = props as ButtonProps;
 
-    const handleOpenChange = (open: boolean, event?: Event) =>{
+    const handleOpenChange = (open: boolean, event?: Event) => {
         setIsOpen(open)
         onOpenChange?.(open)
     }
@@ -233,5 +232,5 @@ export const MenuTree = forwardRef<
                 </FloatingList>
             </MenuContext.Provider>
         </FloatingNode>
-    );
-});
+    )
+})

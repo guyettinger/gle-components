@@ -1,8 +1,8 @@
 import { GLEComponentTheme } from "./GLEComponentTheme.types";
-import GLEComponentLightTheme from "./GLEComponentLightTheme";
+import { GLEComponentLightTheme } from "./GLEComponentLightTheme";
 import { baseColors, boxShadow } from "./Variables";
 
-const GLEComponentDarkTheme: GLEComponentTheme = {
+export const GLEComponentDarkTheme: GLEComponentTheme = {
     gle: {
         ...GLEComponentLightTheme.gle,
         boxShadow: {
@@ -28,5 +28,3 @@ const GLEComponentDarkTheme: GLEComponentTheme = {
         name: 'dark',
     }
 }
-
-export default GLEComponentDarkTheme

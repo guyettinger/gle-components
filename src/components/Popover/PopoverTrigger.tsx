@@ -2,8 +2,7 @@ import { cloneElement, forwardRef, HTMLProps, isValidElement } from "react";
 import { useMergeRefs } from "@floating-ui/react";
 import { PopoverTriggerProps } from "./Popover.types";
 import { usePopoverContext } from "./PopoverContext";
-import Button from "../Button/Button";
-import { ButtonProps } from "../Button/Button.types";
+import { Button, ButtonProps } from "../Button";
 
 export const PopoverTrigger = forwardRef<
     HTMLElement,

@@ -78,9 +78,9 @@ const jsonViewReducer = (json: any, action: JsonViewReducerAction): void => {
     console.log('state after', JSON.stringify(action), JSON.stringify(json, null, 2))
 }
 
-const JsonViewContext = createContext<JsonValue | null>(null)
+export const JsonViewContext = createContext<JsonValue | null>(null)
 
-interface JsonViewApi {
+export interface JsonViewApi {
     add: (path: string, value: JsonValue) => void
     remove: (path: string) => void
     rename: (path: string, name: string) => void
@@ -133,7 +133,7 @@ const createJsonViewApi = (dispatch: Dispatch<JsonViewReducerAction>): JsonViewA
 
 }
 
-const JsonViewApiContext = createContext<JsonViewApi>({
+export const JsonViewApiContext = createContext<JsonViewApi>({
     add(path: string, value: JsonValue): void {
     },
     remove(path: string): void {
