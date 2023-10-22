@@ -1,4 +1,4 @@
-import{n as c,s as t,j as a,a as n}from"./styled-components.browser.esm-1cd6bce5.js";import{M as o,a as e,b as u,c as l,d as M,e as I,f as h,g}from"./MenuItem-c9389ab3.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";import"./floating-ui.react-6c855d10.js";import"./index-d3ea75b5.js";import"./Button-afacee23.js";const V={component:o,title:"gle-components/Floating/Menu",argTypes:{}},s=c`
+import{n as c,s as t,j as a,a as n}from"./styled-components.browser.esm-1cd6bce5.js";import{M as o,a as e,b as u,c as l,d as M,e as I,f as h,g}from"./MenuItem-296dc881.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";import"./floating-ui.react-6c855d10.js";import"./index-d3ea75b5.js";import"./Button-afacee23.js";const V={component:o,title:"gle-components/Floating/Menu",argTypes:{}},s=c`
   vertical-align: text-top;
   padding-right: 8px;
   color: inherit;
@@ -34,4 +34,4 @@ import{n as c,s as t,j as a,a as n}from"./styled-components.browser.esm-1cd6bce5
             <MenuItem name="Instagram"><span>Instagram</span></MenuItem>
         </Menu>
     </Menu>`,...(r=(m=p.parameters)==null?void 0:m.docs)==null?void 0:r.source}}};const D=["Default"];export{p as Default,D as __namedExportsOrder,V as default};
-//# sourceMappingURL=Menu.stories-8c424660.js.map
+//# sourceMappingURL=Menu.stories-be9c16fa.js.map
