@@ -11,62 +11,103 @@ export default meta;
 
 type Story = StoryObj<typeof InputField>;
 
-const StoryTemplate = (args: InputFieldProps) => {
+export const Default: Story = ({label, placeholder}: InputFieldProps) => {
     return (
         <div>
             <h3>Small</h3>
             <div>
-                <InputField data-testid="InputField-id" variant="small" {...args}/>
+                <InputField data-testid="InputField-id" variant="small" label={label} placeholder={placeholder}/>
             </div>
 
             <h2>Medium</h2>
             <div>
-                <InputField data-testid="InputField-id" variant="medium" {...args}/>
+                <InputField data-testid="InputField-id" variant="medium" label={label} placeholder={placeholder}/>
             </div>
 
             <h1>Large</h1>
             <div>
-                <InputField data-testid="InputField-id" variant="large" {...args}/>
+                <InputField data-testid="InputField-id" variant="large" label={label} placeholder={placeholder}/>
             </div>
         </div>
     )
 };
-
-
-export const Default: Story = (args: InputFieldProps) => (
-    <StoryTemplate {...args}/>
-);
 Default.args = {
-    error: false,
-    disabled: false,
     label: "Default",
     placeholder: "Placeholder"
 };
 
-export const Success: Story = (args: InputFieldProps) => (
-    <StoryTemplate {...args}/>
-);
+export const Success: Story = ({label, placeholder, success}: InputFieldProps) => {
+    return (
+        <div>
+            <h3>Small</h3>
+            <div>
+                <InputField data-testid="InputField-id" variant="small" label={label} placeholder={placeholder} success={success}/>
+            </div>
+
+            <h2>Medium</h2>
+            <div>
+                <InputField data-testid="InputField-id" variant="medium" label={label} placeholder={placeholder} success={success}/>
+            </div>
+
+            <h1>Large</h1>
+            <div>
+                <InputField data-testid="InputField-id" variant="large" label={label} placeholder={placeholder} success={success}/>
+            </div>
+        </div>
+    )
+};
 Success.args = {
-    error: false,
     success: true,
-    disabled: false,
     label: "Success",
     placeholder: "Placeholder"
 };
 
-export const Error: Story = (args: InputFieldProps) => (
-    <StoryTemplate {...args}/>
-);
+export const Error: Story = ({label, placeholder, error}: InputFieldProps) => {
+    return (
+        <div>
+            <h3>Small</h3>
+            <div>
+                <InputField data-testid="InputField-id" variant="small" label={label} placeholder={placeholder} error={error}/>
+            </div>
+
+            <h2>Medium</h2>
+            <div>
+                <InputField data-testid="InputField-id" variant="medium" label={label} placeholder={placeholder} error={error}/>
+            </div>
+
+            <h1>Large</h1>
+            <div>
+                <InputField data-testid="InputField-id" variant="large" label={label} placeholder={placeholder} error={error}/>
+            </div>
+        </div>
+    )
+};
 Error.args = {
     error: true,
-    disabled: false,
     message: "Error",
     placeholder: "Placeholder"
 };
 
-export const Disabled: Story = (args: InputFieldProps) => (
-    <StoryTemplate {...args}/>
-);
+export const Disabled: Story = ({label, placeholder, disabled}: InputFieldProps) => {
+    return (
+        <div>
+            <h3>Small</h3>
+            <div>
+                <InputField data-testid="InputField-id" variant="small" label={label} placeholder={placeholder} disabled={disabled}/>
+            </div>
+
+            <h2>Medium</h2>
+            <div>
+                <InputField data-testid="InputField-id" variant="medium" label={label} placeholder={placeholder} disabled={disabled}/>
+            </div>
+
+            <h1>Large</h1>
+            <div>
+                <InputField data-testid="InputField-id" variant="large" label={label} placeholder={placeholder} disabled={disabled}/>
+            </div>
+        </div>
+    )
+};
 Disabled.args = {
     disabled: true,
     label: "Disabled",

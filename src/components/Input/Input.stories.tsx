@@ -32,37 +32,100 @@ const StoryTemplate = (args: InputProps) => {
     )
 };
 
-export const Default: Story = (args: InputProps) => (
-    <StoryTemplate {...args}/>
-);
+export const Default: Story = ({placeholder}: InputProps) => {
+    return (
+        <div>
+            <h3>Small</h3>
+            <div>
+                <Input data-testid="Input-id" variant="small" placeholder={placeholder}/>
+            </div>
+
+            <h2>Medium</h2>
+            <div>
+                <Input data-testid="Input-id" variant="medium" placeholder={placeholder}/>
+            </div>
+
+            <h1>Large</h1>
+            <div>
+                <Input data-testid="Input-id" variant="large" placeholder={placeholder}/>
+            </div>
+        </div>
+    )
+};
 Default.args = {
-    error: false,
-    disabled: false,
     placeholder: "Placeholder"
 };
 
-export const Success: Story = (args: InputProps) => (
-    <StoryTemplate {...args}/>
-);
+export const Success: Story = ({success, placeholder}: InputProps) => {
+    return (
+        <div>
+            <h3>Small</h3>
+            <div>
+                <Input data-testid="Input-id" variant="small" placeholder={placeholder} success={success}/>
+            </div>
+
+            <h2>Medium</h2>
+            <div>
+                <Input data-testid="Input-id" variant="medium" placeholder={placeholder} success={success}/>
+            </div>
+
+            <h1>Large</h1>
+            <div>
+                <Input data-testid="Input-id" variant="large" placeholder={placeholder} success={success}/>
+            </div>
+        </div>
+    )
+};
 Success.args = {
-    error: false,
     success: true,
-    disabled: false,
     placeholder: "Placeholder"
 };
 
-export const Error: Story = (args: InputProps) => (
-    <StoryTemplate {...args}/>
-);
+export const Error: Story = ({error, placeholder}: InputProps) => {
+    return (
+        <div>
+            <h3>Small</h3>
+            <div>
+                <Input data-testid="Input-id" variant="small" placeholder={placeholder} error={error}/>
+            </div>
+
+            <h2>Medium</h2>
+            <div>
+                <Input data-testid="Input-id" variant="medium" placeholder={placeholder} error={error}/>
+            </div>
+
+            <h1>Large</h1>
+            <div>
+                <Input data-testid="Input-id" variant="large" placeholder={placeholder} error={error}/>
+            </div>
+        </div>
+    )
+};
 Error.args = {
     error: true,
-    disabled: false,
     placeholder: "Placeholder"
 };
 
-export const Disabled: Story = (args: InputProps) => (
-    <StoryTemplate {...args}/>
-);
+export const Disabled: Story = ({disabled, placeholder}: InputProps) => {
+    return (
+        <div>
+            <h3>Small</h3>
+            <div>
+                <Input data-testid="Input-id" variant="small" placeholder={placeholder} disabled={disabled}/>
+            </div>
+
+            <h2>Medium</h2>
+            <div>
+                <Input data-testid="Input-id" variant="medium" placeholder={placeholder} disabled={disabled}/>
+            </div>
+
+            <h1>Large</h1>
+            <div>
+                <Input data-testid="Input-id" variant="large" placeholder={placeholder} disabled={disabled}/>
+            </div>
+        </div>
+    )
+};
 Disabled.args = {
     disabled: true,
     placeholder: "Placeholder"

@@ -11,8 +11,8 @@ export default meta;
 
 type Story = StoryObj<typeof JsonView>;
 
-export const Default: Story = (args: JsonViewProps) => (
-    <JsonView data-testid="JsonView-id" {...args} />
+export const Default: Story = ({json}: JsonViewProps) => (
+    <JsonView data-testid="JsonView-id" title={"data"} json={json} />
 );
 Default.args = {
     json: {
