@@ -1,8 +1,17 @@
+<a href="/">
+    <img alt="logo" src="public/images/logo-flipped.png" align="right" width="120" height="120"/>
+</a>
+
 # GLE Components
-A basic component library.
+A basic React component library.
 
 ## Documentation
 [Storybook](https://guyettinger.github.io/gle-components/)
+
+## Installation
+```shell
+npm install gle-components@latest
+```
 
 ## Development
 Install
