@@ -13,7 +13,7 @@ A basic React component library.
 
 ## Installation
 ```shell
-npm install gle-components@latest
+npm install gle-components
 ```
 
 ## Development
